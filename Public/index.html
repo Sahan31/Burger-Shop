@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarab - Fast Food & Restaurant</title>
+    <!-- Google Fonts: Poppins & Playfair Display -->
+    <!-- Google Fonts: Poppins, Playfair Display, & Playball (Cursive) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playball&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind CSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#e52727',
+                            redHover: '#c81e1e',
+                            orange: '#ff7828',
+                            blue: '#1d63ed',
+                            dark: '#0f1115',
+                            darkMuted: '#1e2128'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        cursive: ['"Playball"', '"Caveat"', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom active underline indicator matching design */
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -22px;
+            width: 100%;
+            height: 3px;
+            background-color: #e52727;
+            border-radius: 9999px;
+        }
+
+        /* Floating keyframe animations for hero floating cards */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(8px); }
+        }
+        .animate-float-slow {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+        .animate-float-reverse {
+            animation: floatReverse 4.8s ease-in-out infinite;
+        }
+
+        /* Seamless Infinite Marquee Ticker */
+        @keyframes tickerScroll {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .ticker-track {
+            display: inline-flex;
+            white-space: nowrap;
+            width: max-content;
+            animation: tickerScroll 30s linear infinite;
+        }
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 antialiased selection:bg-brand-red selection:text-white">
+
+    <!-- Header Wrapper -->
+    <header class="w-full sticky top-0 z-50 shadow-sm">
+        
+        <!-- 1st: Top Bar (Black background, 50px height) -->
+        <div class="bg-black text-gray-300 h-[50px] border-b border-white/10 text-xs font-normal">
+            <div class="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-center lg:justify-between">
+                
+                <!-- Left: Contact Details -->
+                <div class="flex items-center space-x-6 overflow-hidden text-nowrap hidden lg:flex">
+                    <a href="tel:+18001234567" class="flex items-center gap-2 hover:text-white transition">
+                        <i class="fa-solid fa-phone text-brand-orange text-xs"></i>
+                        <span>+1 (800) 123-4567</span>
+                    </a>
+                    <a href="mailto:hello@sarabfood.com" class="hidden sm:flex items-center gap-2 hover:text-white transition">
+                        <i class="fa-solid fa-envelope text-brand-orange text-xs"></i>
+                        <span>hello@sarabfood.com</span>
+                    </a>
+                    <div class="hidden md:flex items-center gap-2 text-gray-300">
+                        <i class="fa-solid fa-location-dot text-brand-orange text-xs"></i>
+                        <span>42 Flavor Street, NY</span>
+                    </div>
+                </div>
+
+                <!-- Right: Offer Badge & Social Icons -->
+                <div class="flex items-center space-x-4">
+                    <!-- Delivery Badge -->
+                    <div class="bg-brand-red text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wide flex items-center gap-1.5 shadow-sm">
+                        <i class="fa-solid fa-fire text-amber-300 animate-pulse text-xs"></i>
+                        <span>FREE DELIVERY TODAY!</span>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="flex items-center space-x-2">
+                        <a href="#" aria-label="Facebook" class="w-7 h-7 rounded-full bg-[#202227] hover:bg-brand-orange text-gray-300 hover:text-white flex items-center justify-center transition text-xs">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="w-7 h-7 rounded-full bg-[#202227] hover:bg-brand-orange text-gray-300 hover:text-white flex items-center justify-center transition text-xs">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="w-7 h-7 rounded-full bg-[#202227] hover:bg-brand-orange text-gray-300 hover:text-white flex items-center justify-center transition text-xs">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="#" aria-label="YouTube" class="w-7 h-7 rounded-full bg-[#202227] hover:bg-brand-orange text-gray-300 hover:text-white flex items-center justify-center transition text-xs">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2nd: Main Navigation Bar (White background) -->
+        <nav class="bg-white border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    
+                    <!-- Left: Logo -->
+                    <a href="#" class="flex items-center gap-3 group">
+                        <!-- Logo Icon -->
+                        <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-amber-500 to-brand-orange flex items-center justify-center text-white shadow-md shadow-orange-500/25 group-hover:scale-105 transition-transform duration-200">
+                            <i class="fa-solid fa-utensils text-lg"></i>
+                        </div>
+                        <!-- Logo Text -->
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-extrabold tracking-tight text-gray-900 leading-none">
+                                Sar<span class="text-brand-red">ab</span>
+                            </span>
+                            <span class="text-[9px] font-semibold text-gray-400 tracking-[0.2em] uppercase mt-1 leading-none">
+                                Fast Food &amp; Restaurant
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Center: Navigation Links -->
+                    <div class="hidden lg:flex items-center space-x-7">
+                        <a href="#" class="nav-link active relative text-sm font-semibold text-gray-900 hover:text-brand-red transition">Home</a>
+                        <a href="#about" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-red transition">About</a>
+                        <a href="#categories" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-red transition">Menu</a>
+                        <a href="#chefs" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-red transition">Chefs</a>
+                        <a href="#reservation" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-red transition">Reservation</a>
+                        <a href="#reviews" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-red transition">Reviews</a>
+                        <a href="#contact" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-red transition">Contact</a>
+                    </div>
+
+                    <!-- Right: Search Icon & Order Now Button -->
+                    <div class="flex items-center space-x-5">
+                        <!-- Search Icon -->
+                        <button type="button" aria-label="Search" class="text-gray-700 hover:text-brand-red transition p-1.5 focus:outline-none">
+                            <i class="fa-solid fa-magnifying-glass text-base"></i>
+                        </button>
+
+                        <!-- Order Now Button -->
+                        <a href="#" class="hidden sm:inline-flex items-center gap-2 bg-brand-red hover:bg-brand-redHover text-white text-sm font-semibold px-6 py-3 rounded-xl shadow-md shadow-red-500/25 hover:shadow-lg hover:shadow-red-500/40 transition-all duration-200 transform active:scale-95">
+                            <i class="fa-solid fa-bag-shopping text-sm"></i>
+                            <span>Order Now</span>
+                        </a>
+
+                        <!-- Mobile Menu Button (Hamburger) -->
+                        <button type="button" id="mobile-menu-btn" class="lg:hidden text-gray-700 hover:text-brand-red p-2 focus:outline-none" aria-label="Toggle Menu">
+                            <i class="fa-solid fa-bars text-xl"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pt-3 pb-5 space-y-2">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-semibold text-brand-red bg-red-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">About</a>
+                <a href="#categories" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Menu</a>
+                <a href="#chefs" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Chefs</a>
+                <a href="#reservation" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Reservation</a>
+                <a href="#reviews" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Reviews</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Contact</a>
+                <div class="pt-2">
+                    <a href="#" class="w-full flex items-center justify-center gap-2 bg-brand-red text-white py-3 rounded-xl font-semibold shadow-md sm:hidden">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span>Order Now</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- ==========================================
+         SECTION 01: HERO SECTION
+         ========================================== -->
+    <section class="relative bg-[#FAF7F2] overflow-hidden min-h-[calc(100vh-130px)] flex items-center py-12 lg:py-16 xl:py-20">
+        
+        <!-- Ambient Decorative Background Glows & Watermark -->
+        <div class="absolute inset-0 pointer-events-none select-none overflow-hidden -z-0">
+            <!-- Warm ambient blurred lights matching screenshot -->
+            <div class="absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full bg-gradient-to-br from-amber-200/40 via-orange-100/30 to-transparent blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-20 w-[460px] h-[460px] rounded-full bg-gradient-to-tr from-orange-200/30 via-red-100/25 to-transparent blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/3 -translate-y-1/2 w-[350px] h-[350px] rounded-full bg-amber-100/20 blur-3xl"></div>
+
+            <!-- Giant faint background watermark lettering "FOOD" -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-[42%] -translate-y-1/2 text-[220px] sm:text-[340px] lg:text-[440px] font-serif font-black text-amber-950/[0.035] leading-none tracking-tighter uppercase select-none">
+                FOOD
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Column: Content (Badge, Headline, Subtext, Buttons, Stats) -->
+                <div class="lg:col-span-7 xl:col-span-7 text-left">
+                    
+                    <!-- Top Rated Badge -->
+                    <div class="inline-flex items-center gap-2.5 bg-white/95 backdrop-blur-sm shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-orange-100/80 rounded-full px-4 py-1.5 mb-6 hover:shadow transition-shadow">
+                        <span class="w-6 h-6 rounded-full bg-brand-orange text-white flex items-center justify-center text-[10px] shadow-sm">
+                            <i class="fa-solid fa-star"></i>
+                        </span>
+                        <span class="text-xs sm:text-sm font-bold text-gray-800 tracking-tight">
+                            #1 Rated Fast Food Restaurant in New York
+                        </span>
+                    </div>
+
+                    <!-- Hero Main Heading -->
+                    <h1 class="font-serif font-black text-5xl sm:text-6xl lg:text-[72px] xl:text-[78px] leading-[1.08] tracking-tight text-gray-900">
+                        <span class="inline-block text-gray-900  font-serif font-bold mb-2">Delicious</span><br>
+                        <span class="text-brand-red block font-serif">Fast Food</span>
+                        <span class="block text-gray-900 font-serif">for Every</span>
+                        <span class="block text-gray-900 font-serif">Moment</span>
+                    </h1>
+
+                    <!-- Hero Description -->
+                    <p class="mt-6 text-gray-600 text-base sm:text-lg leading-relaxed max-w-lg font-normal">
+                        Experience bold flavors crafted from premium ingredients. From crispy burgers to gourmet pizzas - every bite is an adventure worth savoring.
+                    </p>
+
+                    <!-- CTA Buttons Row -->
+                    <div class="mt-8 sm:mt-10 flex flex-wrap items-center gap-5 sm:gap-6">
+                        <!-- Primary Button: Explore Menu -->
+                        <a href="#menu" class="group inline-flex items-center gap-3 bg-brand-red hover:bg-brand-redHover text-white font-bold text-base px-8 py-4 rounded-full shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
+                            <i class="fa-solid fa-utensils text-sm group-hover:rotate-12 transition-transform duration-300"></i>
+                            <span>Explore Menu</span>
+                        </a>
+
+                        <!-- Secondary Button: Watch Our Story -->
+                        <button type="button" id="watch-story-btn" class="group inline-flex items-center gap-3 text-gray-800 hover:text-brand-red transition-colors duration-200 focus:outline-none">
+                            <span class="w-12 h-12 rounded-full bg-white shadow-md group-hover:shadow-lg flex items-center justify-center text-brand-red group-hover:scale-110 transition-all duration-300">
+                                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+                            </span>
+                            <span class="font-bold text-sm sm:text-base tracking-wide">Watch Our Story</span>
+                        </button>
+                    </div>
+
+                    <!-- Metrics / Stats Row -->
+                    <div class="mt-12 sm:mt-16 pt-8 border-t border-gray-200/70 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-0 sm:divide-x sm:divide-gray-200/90 max-w-xl">
+                        <!-- Stat 1 -->
+                        <div class="sm:pr-6">
+                            <div class="text-3xl sm:text-4xl font-serif font-black text-gray-900 tracking-tight">850<span class="text-brand-orange">+</span></div>
+                            <div class="text-[10px] sm:text-[11px] font-bold tracking-wider text-gray-400 uppercase mt-1">Happy Customers</div>
+                        </div>
+
+                        <!-- Stat 2 -->
+                        <div class="sm:px-6">
+                            <div class="text-3xl sm:text-4xl font-serif font-black text-gray-900 tracking-tight">120<span class="text-brand-orange">+</span></div>
+                            <div class="text-[10px] sm:text-[11px] font-bold tracking-wider text-gray-400 uppercase mt-1">Menu Items</div>
+                        </div>
+
+                        <!-- Stat 3 -->
+                        <div class="sm:px-6">
+                            <div class="text-3xl sm:text-4xl font-serif font-black text-gray-900 tracking-tight">15<span class="text-brand-orange">+</span></div>
+                            <div class="text-[10px] sm:text-[11px] font-bold tracking-wider text-gray-400 uppercase mt-1">Expert Chefs</div>
+                        </div>
+
+                        <!-- Stat 4 -->
+                        <div class="sm:pl-6">
+                            <div class="text-3xl sm:text-4xl font-serif font-black text-gray-900 tracking-tight">12<span class="text-base font-sans font-bold text-gray-700">yr</span></div>
+                            <div class="text-[10px] sm:text-[11px] font-bold tracking-wider text-gray-400 uppercase mt-1">Experience</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Circular Burger Showcase & Floating Badges -->
+                <div class="lg:col-span-5 xl:col-span-5 flex justify-center lg:justify-end">
+                    
+                    <div class="relative w-[320px] sm:w-[420px] lg:w-[450px] aspect-square flex items-center justify-center">
+                        
+                        <!-- Decorative Offset Warm Halo / Ring behind burger -->
+                        <div class="absolute -right-3 sm:-right-6 -bottom-3 sm:-bottom-6 w-full h-full rounded-full bg-[#fceddc]/75 -z-0 pointer-events-none"></div>
+
+                        <!-- Main Circular Framed Burger Photo -->
+                        <div class="relative z-10 w-[92%] h-[92%] rounded-full p-2 bg-white/70 shadow-2xl backdrop-blur-sm border-4 border-white overflow-hidden group">
+                            <!-- ============================================================== -->
+                            <!-- PHOTO PLACEHOLDER: Oyaage photo eka methanata danna puluwan    -->
+                            <!-- Replace src="..." with your local photo e.g. "images/burger.jpg" -->
+                            <!-- ============================================================== -->
+                            <img id="hero-burger-img" 
+                                 src="img/burger.jpg" 
+                                 alt="Delicious Double Smash Cheeseburger" 
+                                 class="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-700 ease-out" />
+                        </div>
+
+                        <!-- Floating Badge 1: Hot Deal (Top-Left) -->
+                        <div class="absolute top-2 sm:top-6 -left-3 sm:-left-8 lg:-left-10 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-[0_12px_30px_rgba(0,0,0,0.1)] border border-white/80 flex items-center gap-3 animate-float-slow hover:shadow-xl hover:scale-105 transition-all cursor-pointer">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-red-50 text-brand-red flex items-center justify-center text-base sm:text-lg flex-shrink-0">
+                                <i class="fa-solid fa-fire"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900 text-xs sm:text-sm leading-tight">Hot Deal</div>
+                                <div class="text-[10px] sm:text-xs text-gray-400 font-medium mt-0.5">30% off today</div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 2: Fast Delivery (Top-Right) -->
+                        <div class="absolute top-1/4 -right-3 sm:-right-8 lg:-right-10 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-[0_12px_30px_rgba(0,0,0,0.1)] border border-white/80 flex items-center gap-3 animate-float-reverse hover:shadow-xl hover:scale-105 transition-all cursor-pointer">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-base sm:text-lg flex-shrink-0">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900 text-xs sm:text-sm leading-tight">20 min</div>
+                                <div class="text-[10px] sm:text-xs text-gray-400 font-medium mt-0.5">Fast delivery</div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 3: Customer Rating (Bottom-Right) -->
+                        <div class="absolute bottom-6 sm:bottom-10 -right-2 sm:-right-6 lg:-right-8 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-[0_12px_30px_rgba(0,0,0,0.1)] border border-white/80 flex items-center gap-3 animate-float-slow hover:shadow-xl hover:scale-105 transition-all cursor-pointer" style="animation-delay: 1.5s;">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center text-base sm:text-lg flex-shrink-0">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900 text-xs sm:text-sm leading-tight">4.9/5</div>
+                                <div class="text-[10px] sm:text-xs text-gray-400 font-medium mt-0.5">5k+ reviews</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         RED RUNNING TICKER / MARQUEE STRIP
+         ========================================== -->
+    <div class="bg-[#E52727] text-white py-3 overflow-hidden select-none shadow-sm relative z-20">
+        <div class="ticker-track items-center text-xs sm:text-sm font-semibold tracking-wide">
+            <!-- First loop set -->
+            <div class="flex items-center gap-6 sm:gap-8 px-4">
+                <span>Wraps &amp; Rolls</span> <span class="text-white/60 text-xs">●</span>
+                <span>Loaded Fries</span> <span class="text-white/60 text-xs">●</span>
+                <span>Ice Cream Shakes</span> <span class="text-white/60 text-xs">●</span>
+                <span>Grilled Sandwiches</span> <span class="text-white/60 text-xs">●</span>
+                <span>Crispy Fried Chicken</span> <span class="text-white/60 text-xs">●</span>
+                <span>Gourmet Burgers</span> <span class="text-white/60 text-xs">●</span>
+                <span>Artisan Pizzas</span> <span class="text-white/60 text-xs">●</span>
+                <span>Fresh Wraps &amp; Rolls</span> <span class="text-white/60 text-xs">●</span>
+                <span>Loaded Fries</span> <span class="text-white/60 text-xs">●</span>
+                <span>Ice Cream Shakes</span> <span class="text-white/60 text-xs">●</span>
+                <span>Grilled Sandwiches</span> <span class="text-white/60 text-xs">●</span>
+            </div>
+            <!-- Duplicate loop set for seamless infinite scroll -->
+            <div class="flex items-center gap-6 sm:gap-8 px-4" aria-hidden="true">
+                <span>Wraps &amp; Rolls</span> <span class="text-white/60 text-xs">●</span>
+                <span>Loaded Fries</span> <span class="text-white/60 text-xs">●</span>
+                <span>Ice Cream Shakes</span> <span class="text-white/60 text-xs">●</span>
+                <span>Grilled Sandwiches</span> <span class="text-white/60 text-xs">●</span>
+                <span>Crispy Fried Chicken</span> <span class="text-white/60 text-xs">●</span>
+                <span>Gourmet Burgers</span> <span class="text-white/60 text-xs">●</span>
+                <span>Artisan Pizzas</span> <span class="text-white/60 text-xs">●</span>
+                <span>Fresh Wraps &amp; Rolls</span> <span class="text-white/60 text-xs">●</span>
+                <span>Loaded Fries</span> <span class="text-white/60 text-xs">●</span>
+                <span>Ice Cream Shakes</span> <span class="text-white/60 text-xs">●</span>
+                <span>Grilled Sandwiches</span> <span class="text-white/60 text-xs">●</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SECTION 02: BROWSE BY CATEGORY
+         ========================================== -->
+    <section id="categories" class="relative bg-[#FAF7F2] py-16 sm:py-20 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <!-- Section Header -->
+            <div class="max-w-2xl mx-auto">
+                <!-- Cursive Script Tag -->
+                <span class="font-cursive text-brand-red text-2xl sm:text-3xl font-bold tracking-wide block mb-1">
+                    What We Offer
+                </span>
+                
+                <!-- Main Heading -->
+                <h2 class="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-gray-900 tracking-tight">
+                    Browse by <span class="text-brand-red">Category</span>
+                </h2>
+
+                <!-- Underline Orange Accent Bar -->
+                <div class="w-14 h-1 bg-brand-orange rounded-full mx-auto mt-3"></div>
+
+                <!-- Subtitle Description -->
+                <p class="mt-4 text-gray-500 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+                    From sizzling burgers to exotic world cuisines - find your favourite in our menu
+                </p>
+            </div>
+
+            <!-- Categories Grid (6 Cards) -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 mt-12 sm:mt-16">
+                
+                <!-- Category 1: All Items (Active Default) -->
+                <div class="category-card active group bg-white rounded-2xl p-5 sm:p-6 text-center shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-brand-red shadow-[0_8px_25px_-4px_rgba(229,39,39,0.18)] cursor-pointer transform hover:-translate-y-1" data-category="all">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden mb-4 shadow-md bg-gray-100 ring-2 ring-gray-100 group-hover:scale-105 transition-transform duration-300">
+                        <!-- PHOTO PLACEHOLDER: Oyaage photo eka mekata danna puluwan (e.g. img/all.jpg) -->
+                        <img src="img/burger.jpg" alt="All Items" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=300&q=80'" />
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-brand-red transition-colors">
+                        All Items
+                    </h3>
+                    <p class="text-xs text-gray-400 font-medium mt-1">
+                        88 items
+                    </p>
+                </div>
+
+                <!-- Category 2: Burgers -->
+                <div class="category-card group bg-white rounded-2xl p-5 sm:p-6 text-center shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-red-200 cursor-pointer transform hover:-translate-y-1" data-category="burgers">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden mb-4 shadow-md bg-gray-100 ring-2 ring-gray-100 group-hover:scale-105 transition-transform duration-300">
+                        <!-- PHOTO PLACEHOLDER: Oyaage photo eka mekata danna puluwan (e.g. img/burger.jpg) -->
+                        <img src="img/burger.jpg" alt="Burgers" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=300&q=80'" />
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-brand-red transition-colors">
+                        Burgers
+                    </h3>
+                    <p class="text-xs text-gray-400 font-medium mt-1">
+                        24 items
+                    </p>
+                </div>
+
+                <!-- Category 3: Pizza -->
+                <div class="category-card group bg-white rounded-2xl p-5 sm:p-6 text-center shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-red-200 cursor-pointer transform hover:-translate-y-1" data-category="pizza">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden mb-4 shadow-md bg-gray-100 ring-2 ring-gray-100 group-hover:scale-105 transition-transform duration-300">
+                        <!-- PHOTO PLACEHOLDER: Oyaage photo eka mekata danna puluwan (e.g. img/pizza.jpg) -->
+                        <img src="img/sec1img1.avif" alt="Pizza" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-brand-red transition-colors">
+                        Pizza
+                    </h3>
+                    <p class="text-xs text-gray-400 font-medium mt-1">
+                        18 items
+                    </p>
+                </div>
+
+                <!-- Category 4: Fried Chicken -->
+                <div class="category-card group bg-white rounded-2xl p-5 sm:p-6 text-center shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-red-200 cursor-pointer transform hover:-translate-y-1" data-category="chicken">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden mb-4 shadow-md bg-gray-100 ring-2 ring-gray-100 group-hover:scale-105 transition-transform duration-300">
+                        <!-- PHOTO PLACEHOLDER: Oyaage photo eka mekata danna puluwan (e.g. img/chicken.jpg) -->
+                        <img src="img/sec1img2.avif" alt="Fried Chicken" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-brand-red transition-colors">
+                        Fried Chicken
+                    </h3>
+                    <p class="text-xs text-gray-400 font-medium mt-1">
+                        15 items
+                    </p>
+                </div>
+
+                <!-- Category 5: Wraps -->
+                <div class="category-card group bg-white rounded-2xl p-5 sm:p-6 text-center shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-red-200 cursor-pointer transform hover:-translate-y-1" data-category="wraps">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden mb-4 shadow-md bg-gray-100 ring-2 ring-gray-100 group-hover:scale-105 transition-transform duration-300">
+                        <!-- PHOTO PLACEHOLDER: Oyaage photo eka mekata danna puluwan (e.g. img/wraps.jpg) -->
+                        <img src="img/sec1img3.avif" alt="Wraps" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-brand-red transition-colors">
+                        Wraps
+                    </h3>
+                    <p class="text-xs text-gray-400 font-medium mt-1">
+                        12 items
+                    </p>
+                </div>
+
+                <!-- Category 6: Desserts -->
+                <div class="category-card group bg-white rounded-2xl p-5 sm:p-6 text-center shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-red-200 cursor-pointer transform hover:-translate-y-1" data-category="desserts">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden mb-4 shadow-md bg-gray-100 ring-2 ring-gray-100 group-hover:scale-105 transition-transform duration-300">
+                        <!-- PHOTO PLACEHOLDER: Oyaage photo eka mekata danna puluwan (e.g. img/desserts.jpg) -->
+                        <img src="img/sec1img4.jpgc" alt="Desserts" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-brand-red transition-colors">
+                        Desserts
+                    </h3>
+                    <p class="text-xs text-gray-400 font-medium mt-1">
+                        20 items
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 03: ABOUT US / OUR STORY
+         ========================================== -->
+    <section id="about" class="relative bg-white py-16 sm:py-20 lg:py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Column: Visual Showcase (Main Interior Image + 12+ Badge + Small Gourmet Dish) -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative max-w-lg mx-auto lg:max-w-none">
+                        
+                        <!-- Floating Badge: 12+ Years of Excellence (Top Left) -->
+                        <div class="absolute -top-5 -left-4 sm:-top-7 sm:-left-7 z-30 bg-brand-red text-white py-4 sm:py-5 px-5 sm:px-6 rounded-2xl shadow-xl shadow-red-500/30 text-center flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                            <span class="text-3xl sm:text-4xl font-serif font-black tracking-tight leading-none mb-1">
+                                12<span class="text-amber-300 font-sans">+</span>
+                            </span>
+                            <span class="text-[11px] sm:text-xs font-semibold leading-tight text-white/95 uppercase tracking-wider">
+                                Years of<br>Excellence
+                            </span>
+                        </div>
+
+                        <!-- Main Restaurant Interior Image Frame -->
+                        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl bg-gray-100 group">
+                            <!-- ======================================================================= -->
+                            <!-- RESTAURANT MAIN PHOTO PLACEHOLDER: Oyaage restaurant photo eka methanata -->
+                            <!-- Replace src="..." with e.g. "img/restaurant.jpg"                         -->
+                            <!-- ======================================================================= -->
+                            <img id="about-main-img" 
+                                 src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Restaurant Interior" 
+                                 class="w-full h-[360px] sm:h-[460px] lg:h-[490px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                        </div>
+
+                        <!-- Secondary Overlapping Plated Dish Photo (Bottom Right) -->
+                        <div class="absolute -bottom-6 -right-3 sm:-bottom-8 sm:-right-6 z-20 w-44 sm:w-56 aspect-[4/3] rounded-2xl overflow-hidden border-4 sm:border-[6px] border-white shadow-2xl transform hover:scale-105 transition-all duration-300 bg-white">
+                            <!-- ======================================================================= -->
+                            <!-- FOOD DISH PHOTO PLACEHOLDER: Oyaage dish photo eka methanata danna        -->
+                            <!-- Replace src="..." with e.g. "img/dish.jpg"                               -->
+                            <!-- ======================================================================= -->
+                            <img id="about-dish-img" 
+                                 src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Gourmet Dining Dish" 
+                                 class="w-full h-full object-cover" />
+                        </div>
+
+                        <!-- Subtle decorative background warmth behind images -->
+                        <div class="absolute -bottom-8 -left-8 w-64 h-64 bg-amber-100/40 rounded-full blur-3xl -z-0 pointer-events-none"></div>
+
+                    </div>
+                </div>
+
+                <!-- Right Column: Story & Features Details -->
+                <div class="lg:col-span-6 lg:pl-6 xl:pl-10 text-left">
+                    
+                    <!-- Script Subtitle -->
+                    <span class="font-cursive text-brand-red text-2xl sm:text-3xl font-bold tracking-wide block mb-1">
+                        Our Story
+                    </span>
+
+                    <!-- Main Section Heading -->
+                    <h2 class="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-gray-900 tracking-tight leading-[1.15]">
+                        We Invite You to Visit<br>
+                        Our <span class="text-brand-red">Food Restaurant</span>
+                    </h2>
+
+                    <!-- Orange Accent Line -->
+                    <div class="w-14 h-1 bg-brand-orange rounded-full mt-3 mb-6"></div>
+
+                    <!-- Story Paragraph -->
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-8">
+                        Founded in 2012, Sarab began as a small corner joint with a big dream - to serve food that brings people together. Today we're proud to serve thousands of happy customers every week with the same passion that started it all.
+                    </p>
+
+                    <!-- Feature Highlights List -->
+                    <div class="space-y-6 mb-8">
+                        
+                        <!-- Feature 1: 100% Fresh Ingredients -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-red-50 text-brand-red flex items-center justify-center text-lg flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-base">100% Fresh Ingredients</h3>
+                                <p class="text-xs sm:text-sm text-gray-500 mt-0.5 leading-relaxed">
+                                    We source locally and sustainably. Every ingredient is hand-picked daily for maximum freshness.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2: Award-Winning Recipes -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center text-lg flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-base">Award-Winning Recipes</h3>
+                                <p class="text-xs sm:text-sm text-gray-500 mt-0.5 leading-relaxed">
+                                    Our signature recipes have won national culinary awards 5 years in a row.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3: Lightning-Fast Delivery -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-truck-fast"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-base">Lightning-Fast Delivery</h3>
+                                <p class="text-xs sm:text-sm text-gray-500 mt-0.5 leading-relaxed">
+                                    Order online and get hot, fresh food at your door in under 25 minutes, guaranteed.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-2">
+                        <a href="#menu" class="group inline-flex items-center gap-3 bg-brand-red hover:bg-brand-redHover text-white font-bold text-sm sm:text-base px-8 py-3.5 sm:py-4 rounded-full shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
+                            <i class="fa-solid fa-book-open text-sm group-hover:scale-110 transition-transform"></i>
+                            <span>View Full Menu</span>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <div id="video-modal" class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="relative w-full max-w-3xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+            <button id="close-modal-btn" aria-label="Close Video" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="relative pt-[56.25%]">
+                <iframe id="modal-video-frame" class="absolute inset-0 w-full h-full" src="" title="Burger Shop Showcase Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Menu, Video Modal & Category Selection -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn?.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Watch Our Story Modal
+        const watchBtn = document.getElementById('watch-story-btn');
+        const videoModal = document.getElementById('video-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const modalVideoFrame = document.getElementById('modal-video-frame');
+
+        // Food promo video embed URL
+        const videoSrc = 'https://www.youtube.com/embed/g2Fz4u5jS-8?autoplay=1';
+
+        watchBtn?.addEventListener('click', () => {
+            modalVideoFrame.src = videoSrc;
+            videoModal.classList.remove('hidden');
+            videoModal.classList.add('flex');
+        });
+
+        const closeModal = () => {
+            modalVideoFrame.src = '';
+            videoModal.classList.remove('flex');
+            videoModal.classList.add('hidden');
+        };
+
+        closeModalBtn?.addEventListener('click', closeModal);
+        videoModal?.addEventListener('click', (e) => {
+            if (e.target === videoModal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // Category Cards Active Selection
+        const categoryCards = document.querySelectorAll('.category-card');
+        categoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                categoryCards.forEach(c => {
+                    c.classList.remove('active', 'border-brand-red', 'shadow-[0_8px_25px_-4px_rgba(229,39,39,0.18)]');
+                    c.classList.add('border-transparent');
+                });
+                card.classList.remove('border-transparent');
+                card.classList.add('active', 'border-brand-red', 'shadow-[0_8px_25px_-4px_rgba(229,39,39,0.18)]');
+            });
+        });
+    </script>
+
+</body>
+</html>
