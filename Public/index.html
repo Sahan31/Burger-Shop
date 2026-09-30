@@ -91,6 +91,18 @@
             color: #ffffff !important;
             background-color: #c81e1e !important;
         }
+
+        /* Section 05 Diagonal Stripe Texture matching screenshot */
+        .promo-stripes {
+            background-color: #120707;
+            background-image: repeating-linear-gradient(
+                -45deg,
+                rgba(255, 255, 255, 0.018) 0,
+                rgba(255, 255, 255, 0.018) 1.5px,
+                transparent 0,
+                transparent 14px
+            );
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800 antialiased selection:bg-brand-red selection:text-white">
@@ -1000,6 +1012,96 @@
         </div>
     </section>
 
+    <!-- ==========================================
+         SECTION 05: SPECIAL PROMO / LIMITED TIME OFFER
+         ========================================== -->
+    <section id="offer" class="promo-stripes relative py-20 lg:py-28 overflow-hidden text-white">
+        <!-- Ambient radial glow behind right image -->
+        <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-red-600/15 rounded-full blur-3xl pointer-events-none -z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Column: Offer Details & Countdown Timer -->
+                <div class="lg:col-span-6 xl:col-span-6 text-left">
+                    
+                    <!-- Limited Time Badge -->
+                    <div class="inline-flex items-center gap-2 bg-amber-500 text-gray-950 font-extrabold text-[11px] sm:text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-6 shadow-md shadow-amber-500/20">
+                        <i class="fa-solid fa-bolt text-xs"></i>
+                        <span>Limited Time Offer</span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h2 class="font-serif font-black text-4xl sm:text-5xl lg:text-[56px] text-white tracking-tight leading-[1.12]">
+                        Get 30% Off<br>
+                        Our Signature<br>
+                        <span class="text-amber-500">Burger</span> Meal
+                    </h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed max-w-lg mt-5 mb-8 font-normal">
+                        Don't miss our weekend special - grab our award-winning signature burger combo with loaded fries and a premium shake at an unbeatable price.
+                    </p>
+
+                    <!-- Countdown Timer -->
+                    <div class="flex items-center gap-3 sm:gap-4 mb-10">
+                        <!-- Hours -->
+                        <div class="bg-white/[0.06] border border-white/10 rounded-2xl p-3.5 sm:p-4 w-20 sm:w-24 text-center backdrop-blur-sm shadow-inner">
+                            <span id="deal-hours" class="block font-serif font-black text-2xl sm:text-3xl text-white tracking-tight leading-none">08</span>
+                            <span class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1.5">Hours</span>
+                        </div>
+                        <!-- Minutes -->
+                        <div class="bg-white/[0.06] border border-white/10 rounded-2xl p-3.5 sm:p-4 w-20 sm:w-24 text-center backdrop-blur-sm shadow-inner">
+                            <span id="deal-minutes" class="block font-serif font-black text-2xl sm:text-3xl text-white tracking-tight leading-none">22</span>
+                            <span class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1.5">Minutes</span>
+                        </div>
+                        <!-- Seconds -->
+                        <div class="bg-white/[0.06] border border-white/10 rounded-2xl p-3.5 sm:p-4 w-20 sm:w-24 text-center backdrop-blur-sm shadow-inner">
+                            <span id="deal-seconds" class="block font-serif font-black text-2xl sm:text-3xl text-white tracking-tight leading-none">52</span>
+                            <span class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1.5">Seconds</span>
+                        </div>
+                    </div>
+
+                    <!-- Grab Deal CTA Button -->
+                    <div>
+                        <a href="#menu" class="group inline-flex items-center gap-3 bg-brand-red hover:bg-brand-redHover text-white font-bold text-sm sm:text-base px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(229,39,39,0.5)] hover:shadow-[0_15px_30px_rgba(229,39,39,0.7)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
+                            <i class="fa-solid fa-cart-shopping text-sm group-hover:scale-110 transition-transform"></i>
+                            <span>Grab the Deal</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Visual Combo Showcase with Glowing Price Badge -->
+                <div class="lg:col-span-6 xl:col-span-6">
+                    <div class="relative max-w-lg mx-auto lg:max-w-none">
+                        
+                        <!-- Floating Glowing Circular Price Badge (Top Left of image) -->
+                        <div class="absolute -top-5 -left-5 sm:-top-7 sm:-left-7 z-20 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-brand-red text-white flex flex-col items-center justify-center shadow-[0_0_35px_rgba(229,39,39,0.85)] transform -rotate-6 hover:scale-105 transition-transform duration-300">
+                            <span class="text-[11px] sm:text-xs line-through text-white/75 font-semibold leading-none">$24.99</span>
+                            <span class="text-xl sm:text-2xl font-serif font-black text-white leading-tight mt-0.5">$17.49</span>
+                        </div>
+
+                        <!-- Main Combo Image Box -->
+                        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-white/10 group bg-stone-900">
+                            <!-- ======================================================================= -->
+                            <!-- SECTION 05 PROMO PHOTO PLACEHOLDER: Oyaage photo eka methanata danna   -->
+                            <!-- Replace src="..." with e.g. "img/sec5img1.jpg"                          -->
+                            <!-- ======================================================================= -->
+                            <img id="deal-promo-img" 
+                                 src="img/sec5img1.jpg" 
+                                 alt="Signature Burger Meal Combo with Loaded Fries" 
+                                 class="w-full h-[320px] sm:h-[400px] lg:h-[440px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                 onerror="this.src='https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=80'" />
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <div id="video-modal" class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
         <div class="relative w-full max-w-3xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10">
             <button id="close-modal-btn" aria-label="Close Video" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center transition">
@@ -1123,6 +1225,27 @@
                 }, 1000);
             });
         });
+
+        // Section 05: Real-time Countdown Timer
+        let totalSeconds = (8 * 3600) + (22 * 60) + 52;
+        const hoursEl = document.getElementById('deal-hours');
+        const minutesEl = document.getElementById('deal-minutes');
+        const secondsEl = document.getElementById('deal-seconds');
+
+        if (hoursEl && minutesEl && secondsEl) {
+            setInterval(() => {
+                if (totalSeconds <= 0) {
+                    totalSeconds = 24 * 3600; // Reset after expiring
+                }
+                totalSeconds--;
+                const h = Math.floor(totalSeconds / 3600);
+                const m = Math.floor((totalSeconds % 3600) / 60);
+                const s = totalSeconds % 60;
+                hoursEl.textContent = String(h).padStart(2, '0');
+                minutesEl.textContent = String(m).padStart(2, '0');
+                secondsEl.textContent = String(s).padStart(2, '0');
+            }, 1000);
+        }
     </script>
 
 </body>
