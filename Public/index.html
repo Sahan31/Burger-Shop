@@ -216,13 +216,12 @@
                     </a>
 
                     <!-- Center: Navigation Links -->
-                    <div class="hidden lg:flex items-center space-x-5 xl:space-x-7">
+                    <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
                         <a href="#" class="nav-link active relative text-sm font-semibold text-gray-900 hover:text-brand-red transition">Home</a>
                         <a href="#categories" class="nav-link relative text-sm font-medium text-gray-600 hover:text-brand-red transition">Category</a>
                         <a href="#about" class="nav-link relative text-sm font-medium text-gray-600 hover:text-brand-red transition">About Us</a>
                         <a href="#menu" class="nav-link relative text-sm font-medium text-gray-600 hover:text-brand-red transition">Menu</a>
                         <a href="#chefs" class="nav-link relative text-sm font-medium text-gray-600 hover:text-brand-red transition">Chefs</a>
-                        <a href="#reviews" class="nav-link relative text-sm font-medium text-gray-600 hover:text-brand-red transition">Reviews</a>
                         <a href="#reservation" class="nav-link relative text-sm font-medium text-gray-600 hover:text-brand-red transition">Reservation</a>
                         <a href="#contact" class="nav-link relative text-sm font-medium text-gray-600 hover:text-brand-red transition">Contact</a>
                     </div>
@@ -230,14 +229,14 @@
                     <!-- Right: Search Icon & Order Now Button -->
                     <div class="flex items-center space-x-5">
                         <!-- Search Icon -->
-                        <button type="button" aria-label="Search" class="text-gray-700 hover:text-brand-red transition p-1.5 focus:outline-none">
+                        <button type="button" id="search-open-btn" aria-label="Search" class="text-gray-700 hover:text-brand-red transition p-1.5 focus:outline-none cursor-pointer">
                             <i class="fa-solid fa-magnifying-glass text-base"></i>
                         </button>
 
-                        <!-- Order Now Button -->
-                        <a href="#" class="hidden sm:inline-flex items-center gap-2 bg-brand-red hover:bg-brand-redHover text-white text-sm font-semibold px-6 py-3 rounded-xl shadow-md shadow-red-500/25 hover:shadow-lg hover:shadow-red-500/40 transition-all duration-200 transform active:scale-95">
-                            <i class="fa-solid fa-bag-shopping text-sm"></i>
-                            <span>Order Now</span>
+                        <!-- Reservation Button -->
+                        <a href="#reservation" class="hidden sm:inline-flex items-center gap-2 bg-brand-red hover:bg-brand-redHover text-white text-sm font-semibold px-6 py-3 rounded-xl shadow-md shadow-red-500/25 hover:shadow-lg hover:shadow-red-500/40 transition-all duration-200 transform active:scale-95">
+                            <i class="fa-solid fa-calendar-check text-sm"></i>
+                            <span>Reservation</span>
                         </a>
 
                         <!-- Mobile Menu Button (Hamburger) -->
@@ -256,13 +255,12 @@
                 <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">About Us</a>
                 <a href="#menu" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Menu</a>
                 <a href="#chefs" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Chefs</a>
-                <a href="#reviews" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Reviews</a>
                 <a href="#reservation" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Reservation</a>
                 <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Contact</a>
                 <div class="pt-2">
-                    <a href="#" class="w-full flex items-center justify-center gap-2 bg-brand-red text-white py-3 rounded-xl font-semibold shadow-md sm:hidden">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                        <span>Order Now</span>
+                    <a href="#reservation" class="w-full flex items-center justify-center gap-2 bg-brand-red text-white py-3 rounded-xl font-semibold shadow-md sm:hidden">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>Reservation</span>
                     </a>
                 </div>
             </div>
@@ -1116,7 +1114,7 @@
                         <!-- Floating Glowing Circular Price Badge (Top Left of image) -->
                         <div class="absolute -top-5 -left-5 sm:-top-7 sm:-left-7 z-20 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-brand-red text-white flex flex-col items-center justify-center shadow-[0_0_35px_rgba(229,39,39,0.85)] transform -rotate-6 hover:scale-105 transition-transform duration-300">
                             <span class="text-[11px] sm:text-xs line-through text-white/75 font-semibold leading-none">Rs. 2,890</span>
-                            <span class="text-xl sm:text-2xl font-serif font-black text-white leading-tight mt-0.5">Rs. 1,990</span>
+                            <span class="text-xl sm:text-xl font-serif font-black text-white leading-tight mt-0.5">Rs. 1,990</span>
                         </div>
 
                         <!-- Main Combo Image Box -->
@@ -1384,7 +1382,7 @@
                     <a href="#menu" class="bg-white hover:bg-gray-100 text-brand-red font-bold px-7 py-3 rounded-full text-xs sm:text-sm shadow-md hover:shadow-xl transition-all duration-200 transform hover:scale-105 active:scale-95 inline-flex items-center gap-1.5">
                         <span>Order Now</span>
                         <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
-                    </a>
+                    </a>    
                 </div>
 
                 <!-- Card 3: Find Us / Contact Information (Right) -->
@@ -1463,143 +1461,230 @@
                 <div class="w-14 h-1 bg-brand-orange rounded-full mx-auto mt-3"></div>
             </div>
 
-            <!-- Testimonials Grid (3 Cards) -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-                
-                <!-- Testimonial Card 1: Kavinda Fernando -->
-                <div class="bg-[#FFF9F3] rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-orange-100/40">
-                    <div>
-                        <!-- Top Row: 5 Stars & Decorative Quote Watermark -->
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center gap-1 text-amber-400 text-sm">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
+            <!-- Testimonials Carousel Container (Shows 3 by default on desktop, 1 on mobile) -->
+            <div id="reviews-slider-container" class="relative max-w-6xl mx-auto overflow-hidden px-1">
+                <div id="reviews-slider-track" class="flex transition-transform duration-500 ease-out">
+                    
+                    <!-- Testimonial Card 1: Kavinda Fernando -->
+                    <div class="review-slide-card w-full md:w-1/3 flex-shrink-0 px-3">
+                        <div class="bg-[#FFF9F3] rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-orange-100/40 h-full">
+                            <div>
+                                <!-- Top Row: 5 Stars & Decorative Quote Watermark -->
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-1 text-amber-400 text-sm">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="text-brand-orange/30 text-2xl font-serif select-none leading-none">”</span>
+                                </div>
+
+                                <!-- Review Text -->
+                                <p class="text-gray-600 text-sm sm:text-[15px] leading-relaxed mb-6 font-normal">
+                                    Ordered delivery to Kollupitiya and the food arrived hot and fresh in 22 minutes. Portions are generous. Sarab has easily become my go-to burger spot in Colombo!
+                                </p>
                             </div>
-                            <span class="text-brand-orange/30 text-2xl font-serif select-none leading-none">”</span>
-                        </div>
 
-                        <!-- Review Text -->
-                        <p class="text-gray-600 text-sm sm:text-[15px] leading-relaxed mb-6 font-normal">
-                            Ordered delivery to Kollupitiya and the food arrived hot and fresh in 22 minutes. Portions are generous. Sarab has easily become my go-to burger spot in Colombo!
-                        </p>
-                    </div>
-
-                    <!-- Reviewer Info -->
-                    <div class="flex items-center gap-3.5 pt-2">
-                        <!-- Avatar -->
-                        <!-- ======================================================================= -->
-                        <!-- TESTIMONIAL 1 AVATAR: Oyaage photo eka mekata danna (img/review1.jpg)   -->
-                        <!-- ======================================================================= -->
-                        <img src="img/review1.jpg" 
-                             alt="Kavinda Fernando" 
-                             class="w-12 h-12 rounded-full object-cover ring-2 ring-brand-red p-0.5 shadow-sm"
-                             onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80'" />
-                        <div class="flex flex-col">
-                            <h3 class="font-bold text-gray-900 text-sm sm:text-base leading-tight">
-                                Kavinda Fernando
-                            </h3>
-                            <span class="text-gray-400 text-xs font-normal mt-0.5">
-                                Food Blogger &bull; Colombo
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial Card 2: Dinithi Perera -->
-                <div class="bg-[#FFF9F3] rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-orange-100/40">
-                    <div>
-                        <!-- Top Row: 5 Stars & Decorative Quote Watermark -->
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center gap-1 text-amber-400 text-sm">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
+                            <!-- Reviewer Info -->
+                            <div class="flex items-center gap-3.5 pt-2">
+                                <img src="img/revimg1.avif" 
+                                     alt="Kavinda Fernando" 
+                                     class="w-12 h-12 rounded-full object-cover ring-2 ring-brand-red p-0.5 shadow-sm" />
+                                <div class="flex flex-col">
+                                    <h3 class="font-bold text-gray-900 text-sm sm:text-base leading-tight">
+                                        Kavinda Fernando
+                                    </h3>
+                                    <span class="text-gray-400 text-xs font-normal mt-0.5">
+                                        Food Blogger &bull; Colombo
+                                    </span>
+                                </div>
                             </div>
-                            <span class="text-brand-orange/30 text-2xl font-serif select-none leading-none">”</span>
-                        </div>
-
-                        <!-- Review Text -->
-                        <p class="text-gray-600 text-sm sm:text-[15px] leading-relaxed mb-6 font-normal">
-                            The truffle pasta and double smash burger blew my mind! Incredible culinary quality right here in Sri Lanka. Great ambiance, friendly staff. Highly recommended!
-                        </p>
-                    </div>
-
-                    <!-- Reviewer Info -->
-                    <div class="flex items-center gap-3.5 pt-2">
-                        <!-- Avatar -->
-                        <!-- ======================================================================= -->
-                        <!-- TESTIMONIAL 2 AVATAR: Oyaage photo eka mekata danna (img/review2.jpg)   -->
-                        <!-- ======================================================================= -->
-                        <img src="img/review2.jpg" 
-                             alt="Dinithi Perera" 
-                             class="w-12 h-12 rounded-full object-cover ring-2 ring-brand-red p-0.5 shadow-sm"
-                             onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80'" />
-                        <div class="flex flex-col">
-                            <h3 class="font-bold text-gray-900 text-sm sm:text-base leading-tight">
-                                Dinithi Perera
-                            </h3>
-                            <span class="text-gray-400 text-xs font-normal mt-0.5">
-                                Food Enthusiast &bull; Mount Lavinia
-                            </span>
                         </div>
                     </div>
-                </div>
 
-                <!-- Testimonial Card 3: Tharindu Jayasuriya -->
-                <div class="bg-[#FFF9F3] rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-orange-100/40">
-                    <div>
-                        <!-- Top Row: 5 Stars & Decorative Quote Watermark -->
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center gap-1 text-amber-400 text-sm">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
+                    <!-- Testimonial Card 2: Dinithi Perera -->
+                    <div class="review-slide-card w-full md:w-1/3 flex-shrink-0 px-3">
+                        <div class="bg-[#FFF9F3] rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-orange-100/40 h-full">
+                            <div>
+                                <!-- Top Row: 5 Stars & Decorative Quote Watermark -->
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-1 text-amber-400 text-sm">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="text-brand-orange/30 text-2xl font-serif select-none leading-none">”</span>
+                                </div>
+
+                                <!-- Review Text -->
+                                <p class="text-gray-600 text-sm sm:text-[15px] leading-relaxed mb-6 font-normal">
+                                    The truffle pasta and double smash burger blew my mind! Incredible culinary quality right here in Sri Lanka. Great ambiance, friendly staff. Highly recommended!
+                                </p>
                             </div>
-                            <span class="text-brand-orange/30 text-2xl font-serif select-none leading-none">”</span>
-                        </div>
 
-                        <!-- Review Text -->
-                        <p class="text-gray-600 text-sm sm:text-[15px] leading-relaxed mb-6 font-normal">
-                            Catered our corporate team lunch of 50 people in Colombo 03 and everything was flawless. Fresh, delicious, on time and well presented. The Nashville chicken was the star!
-                        </p>
-                    </div>
-
-                    <!-- Reviewer Info -->
-                    <div class="flex items-center gap-3.5 pt-2">
-                        <!-- Avatar -->
-                        <!-- ======================================================================= -->
-                        <!-- TESTIMONIAL 3 AVATAR: Oyaage photo eka mekata danna (img/review3.jpg)   -->
-                        <!-- ======================================================================= -->
-                        <img src="img/review3.jpg" 
-                             alt="Tharindu Jayasuriya" 
-                             class="w-12 h-12 rounded-full object-cover ring-2 ring-brand-red p-0.5 shadow-sm"
-                             onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'" />
-                        <div class="flex flex-col">
-                            <h3 class="font-bold text-gray-900 text-sm sm:text-base leading-tight">
-                                Tharindu Jayasuriya
-                            </h3>
-                            <span class="text-gray-400 text-xs font-normal mt-0.5">
-                                Corporate Client &bull; Colombo 03
-                            </span>
+                            <!-- Reviewer Info -->
+                            <div class="flex items-center gap-3.5 pt-2">
+                                <img src="img/revimg2.avif" 
+                                     alt="Dinithi Perera" 
+                                     class="w-12 h-12 rounded-full object-cover ring-2 ring-brand-red p-0.5 shadow-sm" />
+                                <div class="flex flex-col">
+                                    <h3 class="font-bold text-gray-900 text-sm sm:text-base leading-tight">
+                                        Dinithi Perera
+                                    </h3>
+                                    <span class="text-gray-400 text-xs font-normal mt-0.5">
+                                        Food Enthusiast &bull; Mount Lavinia
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Testimonial Card 3: Tharindu Jayasuriya -->
+                    <div class="review-slide-card w-full md:w-1/3 flex-shrink-0 px-3">
+                        <div class="bg-[#FFF9F3] rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-orange-100/40 h-full">
+                            <div>
+                                <!-- Top Row: 5 Stars & Decorative Quote Watermark -->
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-1 text-amber-400 text-sm">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="text-brand-orange/30 text-2xl font-serif select-none leading-none">”</span>
+                                </div>
+
+                                <!-- Review Text -->
+                                <p class="text-gray-600 text-sm sm:text-[15px] leading-relaxed mb-6 font-normal">
+                                    Catered our corporate team lunch of 50 people in Colombo 03 and everything was flawless. Fresh, delicious, on time and well presented. The Nashville chicken was the star!
+                                </p>
+                            </div>
+
+                            <!-- Reviewer Info -->
+                            <div class="flex items-center gap-3.5 pt-2">
+                                <img src="img/revimg3.avif" 
+                                     alt="Tharindu Jayasuriya" 
+                                     class="w-12 h-12 rounded-full object-cover ring-2 ring-brand-red p-0.5 shadow-sm" />
+                                <div class="flex flex-col">
+                                    <h3 class="font-bold text-gray-900 text-sm sm:text-base leading-tight">
+                                        Tharindu Jayasuriya
+                                    </h3>
+                                    <span class="text-gray-400 text-xs font-normal mt-0.5">
+                                        Corporate Client &bull; Colombo 03
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 4: Shalini De Silva -->
+                    <div class="review-slide-card w-full md:w-1/3 flex-shrink-0 px-3">
+                        <div class="bg-[#FFF9F3] rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-orange-100/40 h-full">
+                            <div>
+                                <!-- Top Row: 5 Stars & Decorative Quote Watermark -->
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-1 text-amber-400 text-sm">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="text-brand-orange/30 text-2xl font-serif select-none leading-none">”</span>
+                                </div>
+
+                                <!-- Review Text -->
+                                <p class="text-gray-600 text-sm sm:text-[15px] leading-relaxed mb-6 font-normal">
+                                    Hands down the crispiest chicken burgers and best Nutella lava cake in the city! Every single bite is packed with authentic gourmet flavor. Can't wait to visit again!
+                                </p>
+                            </div>
+
+                            <!-- Reviewer Info -->
+                            <div class="flex items-center gap-3.5 pt-2">
+                                <img src="img/revimg4.avif" 
+                                     alt="Shalini De Silva" 
+                                     class="w-12 h-12 rounded-full object-cover ring-2 ring-brand-red p-0.5 shadow-sm" />
+                                <div class="flex flex-col">
+                                    <h3 class="font-bold text-gray-900 text-sm sm:text-base leading-tight">
+                                        Shalini De Silva
+                                    </h3>
+                                    <span class="text-gray-400 text-xs font-normal mt-0.5">
+                                        Lifestyle Creator &bull; Kandy / Colombo
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clones of Card 1 and Card 2 for smooth continuous loop on desktop -->
+                    <div class="review-slide-card w-full md:w-1/3 flex-shrink-0 px-3" aria-hidden="true">
+                        <div class="bg-[#FFF9F3] rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-orange-100/40 h-full">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-1 text-amber-400 text-sm">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="text-brand-orange/30 text-2xl font-serif select-none leading-none">”</span>
+                                </div>
+                                <p class="text-gray-600 text-sm sm:text-[15px] leading-relaxed mb-6 font-normal">
+                                    Ordered delivery to Kollupitiya and the food arrived hot and fresh in 22 minutes. Portions are generous. Sarab has easily become my go-to burger spot in Colombo!
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-3.5 pt-2">
+                                <img src="img/revimg1.avif" alt="Kavinda Fernando" class="w-12 h-12 rounded-full object-cover ring-2 ring-brand-red p-0.5 shadow-sm" />
+                                <div class="flex flex-col">
+                                    <h3 class="font-bold text-gray-900 text-sm sm:text-base leading-tight">Kavinda Fernando</h3>
+                                    <span class="text-gray-400 text-xs font-normal mt-0.5">Food Blogger &bull; Colombo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-slide-card w-full md:w-1/3 flex-shrink-0 px-3" aria-hidden="true">
+                        <div class="bg-[#FFF9F3] rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-orange-100/40 h-full">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-1 text-amber-400 text-sm">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="text-brand-orange/30 text-2xl font-serif select-none leading-none">”</span>
+                                </div>
+                                <p class="text-gray-600 text-sm sm:text-[15px] leading-relaxed mb-6 font-normal">
+                                    The truffle pasta and double smash burger blew my mind! Incredible culinary quality right here in Sri Lanka. Great ambiance, friendly staff. Highly recommended!
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-3.5 pt-2">
+                                <img src="img/revimg2.avif" alt="Dinithi Perera" class="w-12 h-12 rounded-full object-cover ring-2 ring-brand-red p-0.5 shadow-sm" />
+                                <div class="flex flex-col">
+                                    <h3 class="font-bold text-gray-900 text-sm sm:text-base leading-tight">Dinithi Perera</h3>
+                                    <span class="text-gray-400 text-xs font-normal mt-0.5">Food Enthusiast &bull; Mount Lavinia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-
             </div>
 
-            <!-- Carousel Pagination Dots -->
-            <div class="flex items-center justify-center gap-2 mt-8 sm:mt-10">
-                <button type="button" aria-label="Go to slide 1" class="testimonial-dot active w-2.5 h-2.5 rounded-full bg-blue-600 transition-all duration-200 focus:outline-none"></button>
-                <button type="button" aria-label="Go to slide 2" class="testimonial-dot w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-200 focus:outline-none"></button>
-                <button type="button" aria-label="Go to slide 3" class="testimonial-dot w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-200 focus:outline-none"></button>
-                <button type="button" aria-label="Go to slide 4" class="testimonial-dot w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-200 focus:outline-none"></button>
+            <!-- Carousel Pagination Buttons (4 Buttons) -->
+            <div class="flex items-center justify-center gap-2.5 mt-8 sm:mt-10">
+                <button type="button" aria-label="Go to review 1" class="testimonial-dot active w-8 h-2.5 rounded-full bg-brand-red transition-all duration-300 focus:outline-none cursor-pointer" data-slide="0"></button>
+                <button type="button" aria-label="Go to review 2" class="testimonial-dot w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300 focus:outline-none cursor-pointer" data-slide="1"></button>
+                <button type="button" aria-label="Go to review 3" class="testimonial-dot w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300 focus:outline-none cursor-pointer" data-slide="2"></button>
+                <button type="button" aria-label="Go to review 4" class="testimonial-dot w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300 focus:outline-none cursor-pointer" data-slide="3"></button>
             </div>
 
         </div>
@@ -1715,7 +1800,7 @@
 
                 <!-- Right Column: Reservation Form (White Card) -->
                 <div class="lg:col-span-8 bg-white rounded-[28px] p-7 sm:p-9 lg:p-10 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col justify-between">
-                    <form id="reservation-form" class="space-y-5">
+                    <form id="reservation-form" novalidate class="space-y-5">
                         
                         <!-- Row 1: Full Name & Phone Number -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -1723,15 +1808,17 @@
                                 <label for="res-name" class="block text-xs sm:text-[13px] font-bold text-gray-800 mb-2">
                                     Full Name *
                                 </label>
-                                <input type="text" id="res-name" name="name" required placeholder="Kasun Fernando" 
+                                <input type="text" id="res-name" name="name" placeholder="Kasun Fernando" 
                                        class="w-full px-4 py-3 sm:py-3.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red transition-all" />
+                                <p id="res-name-error" class="form-error text-brand-red text-xs font-semibold mt-1.5 hidden">Name is required</p>
                             </div>
                             <div>
                                 <label for="res-phone" class="block text-xs sm:text-[13px] font-bold text-gray-800 mb-2">
                                     Phone Number *
                                 </label>
-                                <input type="tel" id="res-phone" name="phone" required placeholder="+94 77 123 4567" 
+                                <input type="tel" id="res-phone" name="phone" placeholder="0771234567" 
                                        class="w-full px-4 py-3 sm:py-3.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red transition-all" />
+                                <p id="res-phone-error" class="form-error text-brand-red text-xs font-semibold mt-1.5 hidden">Phone number is required</p>
                             </div>
                         </div>
 
@@ -1741,16 +1828,18 @@
                                 <label for="res-email" class="block text-xs sm:text-[13px] font-bold text-gray-800 mb-2">
                                     Email Address *
                                 </label>
-                                <input type="email" id="res-email" name="email" required placeholder="kasun@gmail.com" 
+                                <input type="email" id="res-email" name="email" placeholder="kasun@gmail.com" 
                                        class="w-full px-4 py-3 sm:py-3.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red transition-all" />
+                                <p id="res-email-error" class="form-error text-brand-red text-xs font-semibold mt-1.5 hidden">Email is required</p>
                             </div>
                             <div>
                                 <label for="res-guests" class="block text-xs sm:text-[13px] font-bold text-gray-800 mb-2">
                                     Number of Guests *
                                 </label>
                                 <div class="relative">
-                                    <select id="res-guests" name="guests" required 
+                                    <select id="res-guests" name="guests" 
                                             class="w-full px-4 py-3 sm:py-3.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 appearance-none focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red transition-all cursor-pointer pr-10">
+                                        <option value="" disabled selected>Select Guests</option>
                                         <option value="1">1 Person</option>
                                         <option value="2">2 Persons</option>
                                         <option value="3">3 Persons</option>
@@ -1762,6 +1851,7 @@
                                         <i class="fa-solid fa-chevron-down text-xs"></i>
                                     </div>
                                 </div>
+                                <p id="res-guests-error" class="form-error text-brand-red text-xs font-semibold mt-1.5 hidden">Number of guests is required</p>
                             </div>
                         </div>
 
@@ -1771,17 +1861,19 @@
                                 <label for="res-date" class="block text-xs sm:text-[13px] font-bold text-gray-800 mb-2">
                                     Date *
                                 </label>
-                                <input type="date" id="res-date" name="date" required 
+                                <input type="date" id="res-date" name="date" 
                                        class="w-full px-4 py-3 sm:py-3.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red transition-all cursor-pointer" />
+                                <p id="res-date-error" class="form-error text-brand-red text-xs font-semibold mt-1.5 hidden">Date is required</p>
                             </div>
                             <div>
                                 <label for="res-time" class="block text-xs sm:text-[13px] font-bold text-gray-800 mb-2">
                                     Time *
                                 </label>
                                 <div class="relative">
-                                    <select id="res-time" name="time" required 
+                                    <select id="res-time" name="time" 
                                             class="w-full px-4 py-3 sm:py-3.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 appearance-none focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red transition-all cursor-pointer pr-10">
-                                        <option value="09:00 AM" selected>09:00 AM</option>
+                                        <option value="" disabled selected>Select Time</option>
+                                        <option value="09:00 AM">09:00 AM</option>
                                         <option value="10:00 AM">10:00 AM</option>
                                         <option value="11:00 AM">11:00 AM</option>
                                         <option value="12:00 PM">12:00 PM</option>
@@ -1798,6 +1890,7 @@
                                         <i class="fa-solid fa-chevron-down text-xs"></i>
                                     </div>
                                 </div>
+                                <p id="res-time-error" class="form-error text-brand-red text-xs font-semibold mt-1.5 hidden">Time is required</p>
                             </div>
                         </div>
 
@@ -1996,7 +2089,7 @@
 
                 <!-- Right Column: Contact Form (White Card) -->
                 <div class="lg:col-span-8 bg-white rounded-[28px] p-7 sm:p-9 lg:p-10 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col justify-between">
-                    <form id="contact-form" class="space-y-5">
+                    <form id="contact-form" novalidate class="space-y-5">
                         
                         <!-- Row 1: Your Name & Email Address -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -2004,15 +2097,17 @@
                                 <label for="contact-name" class="block text-xs sm:text-[13px] font-bold text-gray-800 mb-2">
                                     Your Name *
                                 </label>
-                                <input type="text" id="contact-name" name="name" required placeholder="Sahan Perera" 
+                                <input type="text" id="contact-name" name="name" placeholder="Sahan Perera" 
                                        class="w-full px-4 py-3 sm:py-3.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red transition-all" />
+                                <p id="contact-name-error" class="form-error text-brand-red text-xs font-semibold mt-1.5 hidden">Name is required</p>
                             </div>
                             <div>
                                 <label for="contact-email" class="block text-xs sm:text-[13px] font-bold text-gray-800 mb-2">
                                     Email Address *
                                 </label>
-                                <input type="email" id="contact-email" name="email" required placeholder="sahan@gmail.com" 
+                                <input type="email" id="contact-email" name="email" placeholder="sahan@gmail.com" 
                                        class="w-full px-4 py-3 sm:py-3.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red transition-all" />
+                                <p id="contact-email-error" class="form-error text-brand-red text-xs font-semibold mt-1.5 hidden">Email is required</p>
                             </div>
                         </div>
 
@@ -2020,19 +2115,21 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
                                 <label for="contact-phone" class="block text-xs sm:text-[13px] font-bold text-gray-800 mb-2">
-                                    Phone Number
+                                    Contact Number *
                                 </label>
-                                <input type="tel" id="contact-phone" name="phone" placeholder="+94 77 123 4567" 
+                                <input type="tel" id="contact-phone" name="phone" placeholder="0771234567" 
                                        class="w-full px-4 py-3 sm:py-3.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red transition-all" />
+                                <p id="contact-phone-error" class="form-error text-brand-red text-xs font-semibold mt-1.5 hidden">Phone number is required</p>
                             </div>
                             <div>
                                 <label for="contact-subject" class="block text-xs sm:text-[13px] font-bold text-gray-800 mb-2">
                                     Subject *
                                 </label>
                                 <div class="relative">
-                                    <select id="contact-subject" name="subject" required 
+                                    <select id="contact-subject" name="subject" 
                                             class="w-full px-4 py-3 sm:py-3.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 appearance-none focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red transition-all cursor-pointer pr-10">
-                                        <option value="General Inquiry" selected>General Inquiry</option>
+                                        <option value="" disabled selected>Select Subject</option>
+                                        <option value="General Inquiry">General Inquiry</option>
                                         <option value="Reservation Query">Reservation Query</option>
                                         <option value="Catering & Events">Catering &amp; Events</option>
                                         <option value="Feedback / Suggestions">Feedback &amp; Suggestions</option>
@@ -2042,6 +2139,7 @@
                                         <i class="fa-solid fa-chevron-down text-xs"></i>
                                     </div>
                                 </div>
+                                <p id="contact-subject-error" class="form-error text-brand-red text-xs font-semibold mt-1.5 hidden">Subject is required</p>
                             </div>
                         </div>
 
@@ -2050,15 +2148,16 @@
                             <label for="contact-message" class="block text-xs sm:text-[13px] font-bold text-gray-800 mb-2">
                                 Message *
                             </label>
-                            <textarea id="contact-message" name="message" required rows="4" 
+                            <textarea id="contact-message" name="message" rows="4" 
                                       placeholder="Write your message here..." 
                                       class="w-full px-4 py-3 sm:py-3.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red transition-all resize-none"></textarea>
+                            <p id="contact-message-error" class="form-error text-brand-red text-xs font-semibold mt-1.5 hidden">Message is required</p>
                         </div>
 
                         <!-- Row 4: Submit Button (Left-aligned as in screenshot) -->
                         <div class="pt-2">
                             <button type="submit" id="contact-submit-btn" 
-                                    class="bg-brand-red hover:bg-brand-redHover text-white font-bold py-3.5 sm:py-4 px-8 rounded-full shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-200 transform hover:scale-105 active:scale-95 inline-flex items-center gap-2.5 text-sm sm:text-base cursor-pointer">
+                                     class="bg-brand-red hover:bg-brand-redHover text-white font-bold py-3.5 sm:py-4 px-8 rounded-full shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-200 transform hover:scale-105 active:scale-95 inline-flex items-center gap-2.5 text-sm sm:text-base cursor-pointer">
                                 <i class="fa-solid fa-paper-plane text-sm"></i>
                                 <span>Send Message</span>
                             </button>
@@ -2140,27 +2239,33 @@
                             </a>
                         </li>
                         <li>
+                            <a href="#categories" class="group flex items-center gap-2 hover:text-white transition-colors">
+                                <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
+                                <span>Category</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="#about" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
                                 <span>About Us</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#categories" class="group flex items-center gap-2 hover:text-white transition-colors">
+                            <a href="#menu" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
-                                <span>Our Menu</span>
+                                <span>Menu</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#chefs" class="group flex items-center gap-2 hover:text-white transition-colors">
+                                <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
+                                <span>Chefs</span>
                             </a>
                         </li>
                         <li>
                             <a href="#reservation" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
                                 <span>Reservation</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#reviews" class="group flex items-center gap-2 hover:text-white transition-colors">
-                                <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
-                                <span>Blog</span>
                             </a>
                         </li>
                         <li>
@@ -2185,37 +2290,37 @@
                     <!-- Links List -->
                     <ul class="space-y-2.5 text-sm">
                         <li>
-                            <a href="#categories" class="group flex items-center gap-2 hover:text-white transition-colors">
+                            <a href="#menu" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
                                 <span>Burgers</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#categories" class="group flex items-center gap-2 hover:text-white transition-colors">
+                            <a href="#menu" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
                                 <span>Pizza</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#categories" class="group flex items-center gap-2 hover:text-white transition-colors">
+                            <a href="#menu" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
                                 <span>Fried Chicken</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#categories" class="group flex items-center gap-2 hover:text-white transition-colors">
+                            <a href="#menu" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
                                 <span>Wraps &amp; Rolls</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#categories" class="group flex items-center gap-2 hover:text-white transition-colors">
+                            <a href="#menu" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
                                 <span>Pasta</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#categories" class="group flex items-center gap-2 hover:text-white transition-colors">
+                            <a href="#menu" class="group flex items-center gap-2 hover:text-white transition-colors">
                                 <span class="text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">&gt;</span>
                                 <span>Desserts</span>
                             </a>
@@ -2322,6 +2427,222 @@
         </div>
     </div>
 
+    <!-- ==========================================
+         SEARCH MODAL ("What are you craving today?")
+         ========================================== -->
+    <div id="search-modal" class="fixed inset-0 z-[120] bg-black/90 backdrop-blur-md hidden items-start justify-center overflow-y-auto p-4 sm:p-6 transition-all duration-300">
+        
+        <!-- Close Button (Top Right as in screenshot) -->
+        <button type="button" id="close-search-modal-btn" aria-label="Close search" class="fixed top-5 right-5 sm:top-7 sm:right-7 z-[130] w-11 h-11 rounded-full bg-[#1c1d22] hover:bg-[#2c2d35] border border-white/20 text-white flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 focus:outline-none cursor-pointer shadow-2xl">
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+
+        <!-- Modal Inner Wrapper -->
+        <div class="relative w-full max-w-3xl my-auto pt-10 sm:pt-14 pb-12 text-center" id="search-modal-content">
+            
+            <!-- Heading (Exact text from screenshot) -->
+            <h2 class="font-serif text-3xl sm:text-4xl lg:text-[42px] font-normal text-white tracking-tight mb-8">
+                What are you craving today?
+            </h2>
+
+            <!-- Search Input Bar with Red Button -->
+            <div class="relative w-full max-w-2xl mx-auto mb-7">
+                <form id="search-modal-form" class="relative flex items-center bg-[#1d1f24] border border-white/15 rounded-full p-1.5 pl-6 shadow-2xl focus-within:border-brand-red focus-within:ring-2 focus-within:ring-brand-red/30 transition-all" onsubmit="event.preventDefault();">
+                    <input type="text" id="search-modal-input" placeholder="Search burgers, pizza, chicken..." 
+                           class="w-full bg-transparent text-white placeholder-gray-400 text-sm sm:text-base focus:outline-none pr-3" 
+                           autocomplete="off" />
+                    <button type="button" id="search-modal-submit-btn" aria-label="Submit search" 
+                            class="w-12 h-12 rounded-full bg-brand-red hover:bg-brand-redHover text-white flex items-center justify-center flex-shrink-0 transition-transform active:scale-95 shadow-md shadow-red-500/30 cursor-pointer">
+                        <i class="fa-solid fa-magnifying-glass text-base"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Quick Category Filter Pills (2 Rows matching screenshot) -->
+            <div class="space-y-3 mb-8">
+                <!-- Row 1: All Items, Burgers, Pizza, Chicken, Wraps -->
+                <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+                    <button type="button" class="search-cat-pill active inline-flex items-center gap-2 bg-brand-red text-white text-xs font-semibold px-4 py-2 rounded-full border border-brand-red shadow-md transition-all cursor-pointer hover:scale-105 active:scale-95" data-category="all">
+                        <img src="img/burger.jpg" alt="All" class="w-5 h-5 rounded-full object-cover" />
+                        <span>All Items</span>
+                    </button>
+                    <button type="button" class="search-cat-pill inline-flex items-center gap-2 bg-[#1d1f24] hover:bg-[#282a32] text-gray-300 hover:text-white text-xs font-medium px-4 py-2 rounded-full border border-white/10 transition-all cursor-pointer hover:scale-105 active:scale-95" data-category="burgers">
+                        <img src="img/burger.jpg" alt="Burgers" class="w-5 h-5 rounded-full object-cover" />
+                        <span>Burgers</span>
+                    </button>
+                    <button type="button" class="search-cat-pill inline-flex items-center gap-2 bg-[#1d1f24] hover:bg-[#282a32] text-gray-300 hover:text-white text-xs font-medium px-4 py-2 rounded-full border border-white/10 transition-all cursor-pointer hover:scale-105 active:scale-95" data-category="pizza">
+                        <img src="img/sec1img1.avif" alt="Pizza" class="w-5 h-5 rounded-full object-cover" />
+                        <span>Pizza</span>
+                    </button>
+                    <button type="button" class="search-cat-pill inline-flex items-center gap-2 bg-[#1d1f24] hover:bg-[#282a32] text-gray-300 hover:text-white text-xs font-medium px-4 py-2 rounded-full border border-white/10 transition-all cursor-pointer hover:scale-105 active:scale-95" data-category="chicken">
+                        <img src="img/sec1img2.avif" alt="Chicken" class="w-5 h-5 rounded-full object-cover" />
+                        <span>Chicken</span>
+                    </button>
+                    <button type="button" class="search-cat-pill inline-flex items-center gap-2 bg-[#1d1f24] hover:bg-[#282a32] text-gray-300 hover:text-white text-xs font-medium px-4 py-2 rounded-full border border-white/10 transition-all cursor-pointer hover:scale-105 active:scale-95" data-category="wraps">
+                        <img src="img/sec1img3.avif" alt="Wraps" class="w-5 h-5 rounded-full object-cover" />
+                        <span>Wraps</span>
+                    </button>
+                </div>
+
+                <!-- Row 2: Pasta, Desserts -->
+                <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+                    <button type="button" class="search-cat-pill inline-flex items-center gap-2 bg-[#1d1f24] hover:bg-[#282a32] text-gray-300 hover:text-white text-xs font-medium px-4 py-2 rounded-full border border-white/10 transition-all cursor-pointer hover:scale-105 active:scale-95" data-category="pasta">
+                        <img src="img/sec4img6.jpg" alt="Pasta" class="w-5 h-5 rounded-full object-cover" />
+                        <span>Pasta</span>
+                    </button>
+                    <button type="button" class="search-cat-pill inline-flex items-center gap-2 bg-[#1d1f24] hover:bg-[#282a32] text-gray-300 hover:text-white text-xs font-medium px-4 py-2 rounded-full border border-white/10 transition-all cursor-pointer hover:scale-105 active:scale-95" data-category="desserts">
+                        <img src="img/sec1img4.jpg" alt="Desserts" class="w-5 h-5 rounded-full object-cover" />
+                        <span>Desserts</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Trending Searches (Exact tags from screenshot) -->
+            <div class="mb-6">
+                <div class="flex items-center justify-center gap-1.5 text-xs font-bold text-amber-400 mb-3 tracking-wide">
+                    <i class="fa-solid fa-fire text-amber-500 text-xs"></i>
+                    <span class="text-gray-400 text-xs uppercase tracking-wider font-semibold">Trending Searches</span>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-2.5 max-w-2xl mx-auto">
+                    <button type="button" class="trending-tag-btn border border-amber-600/70 bg-[#241e15] hover:bg-amber-600/20 text-[#f59e0b] hover:text-amber-300 text-[11px] font-bold tracking-wider px-3.5 py-1.5 rounded-full transition-all cursor-pointer active:scale-95" data-search="Smash Burger">
+                        SMASH BURGER
+                    </button>
+                    <button type="button" class="trending-tag-btn border border-amber-600/70 bg-[#241e15] hover:bg-amber-600/20 text-[#f59e0b] hover:text-amber-300 text-[11px] font-bold tracking-wider px-3.5 py-1.5 rounded-full transition-all cursor-pointer active:scale-95" data-search="Nashville Chicken">
+                        NASHVILLE CHICKEN
+                    </button>
+                    <button type="button" class="trending-tag-btn border border-amber-600/70 bg-[#241e15] hover:bg-amber-600/20 text-[#f59e0b] hover:text-amber-300 text-[11px] font-bold tracking-wider px-3.5 py-1.5 rounded-full transition-all cursor-pointer active:scale-95" data-search="Truffle Pizza">
+                        TRUFFLE PIZZA
+                    </button>
+                    <button type="button" class="trending-tag-btn border border-amber-600/70 bg-[#241e15] hover:bg-amber-600/20 text-[#f59e0b] hover:text-amber-300 text-[11px] font-bold tracking-wider px-3.5 py-1.5 rounded-full transition-all cursor-pointer active:scale-95" data-search="Lava Cake">
+                        LAVA CAKE
+                    </button>
+                    <button type="button" class="trending-tag-btn border border-amber-600/70 bg-[#241e15] hover:bg-amber-600/20 text-[#f59e0b] hover:text-amber-300 text-[11px] font-bold tracking-wider px-3.5 py-1.5 rounded-full transition-all cursor-pointer active:scale-95" data-search="Loaded Fries">
+                        LOADED FRIES
+                    </button>
+                </div>
+                <div class="flex items-center justify-center mt-2.5">
+                    <button type="button" class="trending-tag-btn border border-amber-600/70 bg-[#241e15] hover:bg-amber-600/20 text-[#f59e0b] hover:text-amber-300 text-[11px] font-bold tracking-wider px-3.5 py-1.5 rounded-full transition-all cursor-pointer active:scale-95" data-search="Mango Shake">
+                        MANGO SHAKE
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dynamic Search Results Grid (Cards appear live when searching/filtering) -->
+            <div id="search-modal-results" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-left max-w-3xl mx-auto pt-6 border-t border-white/10">
+                <!-- Injected via JavaScript -->
+            </div>
+
+            <!-- Empty / No results message -->
+            <div id="search-modal-empty" class="hidden py-8 text-center text-gray-400 text-sm">
+                <i class="fa-solid fa-magnifying-glass text-3xl text-gray-600 mb-3 block"></i>
+                <span>No delicious items match your search. Try searching "Burger", "Pizza", or "Chicken"!</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scroll To Top Button -->
+    <button id="scroll-to-top-btn" aria-label="Scroll to top" class="fixed bottom-6 right-6 z-50 w-12 h-12 bg-brand-red hover:bg-brand-redHover text-white rounded-full shadow-xl shadow-red-500/30 flex items-center justify-center transform translate-y-20 opacity-0 transition-all duration-300 hover:scale-110 focus:outline-none hidden">
+        <i class="fa-solid fa-arrow-up text-lg"></i>
+    </button>
+
+    <!-- Product Details Modal -->
+    <div id="product-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-3xl overflow-hidden w-full max-w-4xl max-h-[95vh] flex flex-col md:flex-row relative shadow-2xl transform scale-95 transition-transform duration-300" id="product-modal-content">
+            
+            <!-- Close Button -->
+            <button type="button" id="close-product-modal-btn" class="absolute top-4 right-4 z-20 w-8 h-8 bg-white/80 backdrop-blur-sm hover:bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:text-brand-red transition-colors shadow-sm focus:outline-none">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+
+            <!-- Left: Image -->
+            <div class="md:w-1/2 relative bg-gray-100 h-64 md:h-auto">
+                <img id="pm-image" src="" alt="Product" class="w-full h-full object-cover" />
+            </div>
+
+            <!-- Right: Details -->
+            <div class="md:w-1/2 p-6 sm:p-8 md:p-10 flex flex-col justify-between overflow-y-auto">
+                
+                <div>
+                    <!-- Category -->
+                    <span id="pm-category" class="text-brand-orange text-xs font-bold uppercase tracking-wider block mb-2">BURGERS</span>
+                    
+                    <!-- Title -->
+                    <h3 id="pm-title" class="font-serif font-black text-2xl sm:text-3xl text-gray-900 tracking-tight leading-snug mb-2">
+                        Classic Smash Burger
+                    </h3>
+                    
+                    <!-- Rating -->
+                    <div class="flex items-center gap-1.5 text-amber-500 text-xs font-semibold mb-4">
+                        <div class="flex gap-0.5">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span id="pm-rating-text" class="text-gray-400 font-medium ml-1">4.9 (128 reviews)</span>
+                    </div>
+
+                    <!-- Description -->
+                    <p id="pm-desc" class="text-gray-500 text-sm leading-relaxed mb-6">
+                        Double smashed patty, cheddar cheese, caramelized onions, house pickles and our legendary special sauce. Made fresh to order on a toasted brioche bun.
+                    </p>
+
+                    <!-- Price -->
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span id="pm-price" class="text-brand-red font-black text-3xl font-serif">Rs. 1,490</span>
+                        <span id="pm-old-price" class="text-gray-400 text-sm line-through ml-2">Rs. 1,890</span>
+                    </div>
+
+                    <!-- Badges Row -->
+                    <div class="flex flex-wrap items-center gap-3 mb-6">
+                        <div class="bg-[#f8f9fa] rounded-xl px-4 py-2.5 text-center min-w-[70px]">
+                            <span class="block text-gray-900 font-bold text-sm">620 kcal</span>
+                            <span class="block text-gray-400 text-[10px] font-medium uppercase mt-0.5">Calories</span>
+                        </div>
+                        <div class="bg-[#f8f9fa] rounded-xl px-4 py-2.5 text-center min-w-[70px]">
+                            <span class="block text-gray-900 font-bold text-sm">12 min</span>
+                            <span class="block text-gray-400 text-[10px] font-medium uppercase mt-0.5">Prep Time</span>
+                        </div>
+                        <div class="bg-[#f8f9fa] rounded-xl px-4 py-2.5 text-center min-w-[70px]">
+                            <span class="block text-gray-900 font-bold text-sm">4.9/5</span>
+                            <span class="block text-gray-400 text-[10px] font-medium uppercase mt-0.5">Rating</span>
+                        </div>
+                    </div>
+
+                    <!-- Quantity & Tags -->
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="flex items-center gap-4">
+                            <button type="button" id="pm-qty-minus" class="w-8 h-8 rounded-full border border-brand-red text-brand-red flex items-center justify-center hover:bg-brand-red hover:text-white transition-colors">
+                                <i class="fa-solid fa-minus text-[10px]"></i>
+                            </button>
+                            <span id="pm-qty" class="font-bold text-gray-900 text-lg w-4 text-center">1</span>
+                            <button type="button" id="pm-qty-plus" class="w-8 h-8 rounded-full border border-brand-red text-brand-red flex items-center justify-center hover:bg-brand-red hover:text-white transition-colors">
+                                <i class="fa-solid fa-plus text-[10px]"></i>
+                            </button>
+                        </div>
+                        <span class="text-gray-400 text-xs font-medium uppercase tracking-wider">portion</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-[#fff3e0] text-amber-600 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md">Spicy</span>
+                        <span class="bg-[#ffebee] text-brand-red text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md">Bestseller</span>
+                        <span class="bg-gray-100 text-gray-600 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md">Beef</span>
+                    </div>
+
+                </div>
+
+                <!-- Add to Cart Button -->
+                <button type="button" class="w-full bg-brand-red hover:bg-brand-redHover text-white font-bold text-sm sm:text-base py-3.5 sm:py-4 rounded-xl shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Add to Cart</span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript for Mobile Menu, Video Modal, Category Selection & Menu Filters -->
     <script>
         // Mobile Menu Toggle
@@ -2379,6 +2700,18 @@
                 const matchingTab = document.querySelector(`.menu-filter-btn[data-filter="${catType}"]`);
                 if (matchingTab) {
                     matchingTab.click();
+                }
+
+                // Scroll smoothly to Section 04 (Our Delicious Menu)
+                const menuSection = document.getElementById('menu');
+                if (menuSection) {
+                    const header = document.querySelector('header');
+                    const headerHeight = header ? header.offsetHeight : 130;
+                    const offsetPosition = menuSection.getBoundingClientRect().top + window.pageYOffset - (headerHeight + 10);
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
@@ -2456,62 +2789,339 @@
             }, 1000);
         }
 
-        // Section 09: Reservation Form Submission Feedback
+        // ==========================================
+        // FORM VALIDATION & SUBMISSION HELPERS
+        // ==========================================
+        function showFieldError(inputEl, errorEl, message) {
+            if (errorEl) {
+                errorEl.textContent = message;
+                errorEl.classList.remove('hidden');
+            }
+            if (inputEl) {
+                inputEl.classList.add('border-red-500', 'focus:ring-red-200', 'focus:border-red-500');
+                inputEl.classList.remove('border-gray-200', 'focus:ring-brand-red/20', 'focus:border-brand-red');
+            }
+        }
+
+        function clearFieldError(inputEl, errorEl) {
+            if (errorEl) {
+                errorEl.classList.add('hidden');
+                errorEl.textContent = '';
+            }
+            if (inputEl) {
+                inputEl.classList.remove('border-red-500', 'focus:ring-red-200', 'focus:border-red-500');
+                inputEl.classList.add('border-gray-200', 'focus:ring-brand-red/20', 'focus:border-brand-red');
+            }
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+        }
+
+        function isValidPhone(phone) {
+            const digits = phone.replace(/[^\d]/g, '');
+            return digits.length === 10;
+        }
+
+        // ==========================================
+        // SECTION 09: RESERVATION FORM VALIDATION
+        // ==========================================
         const resForm = document.getElementById('reservation-form');
         const resSuccess = document.getElementById('reservation-success');
+        const resName = document.getElementById('res-name');
+        const resPhone = document.getElementById('res-phone');
+        const resEmail = document.getElementById('res-email');
+        const resGuests = document.getElementById('res-guests');
+        const resDate = document.getElementById('res-date');
+        const resTime = document.getElementById('res-time');
+
+        // Set minimum date to today
+        if (resDate) {
+            resDate.min = new Date().toISOString().split('T')[0];
+        }
+
+        // Real-time clearance of errors on input
+        resName?.addEventListener('input', () => clearFieldError(resName, document.getElementById('res-name-error')));
+        resPhone?.addEventListener('input', () => clearFieldError(resPhone, document.getElementById('res-phone-error')));
+        resEmail?.addEventListener('input', () => clearFieldError(resEmail, document.getElementById('res-email-error')));
+        resGuests?.addEventListener('change', () => clearFieldError(resGuests, document.getElementById('res-guests-error')));
+        resDate?.addEventListener('input', () => clearFieldError(resDate, document.getElementById('res-date-error')));
+        resTime?.addEventListener('change', () => clearFieldError(resTime, document.getElementById('res-time-error')));
 
         resForm?.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            let isValid = true;
+            let firstInvalidInput = null;
+
+            // Validate Name
+            if (!resName.value.trim()) {
+                showFieldError(resName, document.getElementById('res-name-error'), 'Name is required');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = resName;
+            } else {
+                clearFieldError(resName, document.getElementById('res-name-error'));
+            }
+
+            // Validate Phone
+            if (!resPhone.value.trim()) {
+                showFieldError(resPhone, document.getElementById('res-phone-error'), 'Phone number is required');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = resPhone;
+            } else if (!isValidPhone(resPhone.value)) {
+                showFieldError(resPhone, document.getElementById('res-phone-error'), 'Please enter a valid phone number');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = resPhone;
+            } else {
+                clearFieldError(resPhone, document.getElementById('res-phone-error'));
+            }
+
+            // Validate Email
+            if (!resEmail.value.trim()) {
+                showFieldError(resEmail, document.getElementById('res-email-error'), 'Email is required');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = resEmail;
+            } else if (!isValidEmail(resEmail.value)) {
+                showFieldError(resEmail, document.getElementById('res-email-error'), 'Please enter a valid email address');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = resEmail;
+            } else {
+                clearFieldError(resEmail, document.getElementById('res-email-error'));
+            }
+
+            // Validate Guests
+            if (!resGuests.value) {
+                showFieldError(resGuests, document.getElementById('res-guests-error'), 'Number of guests is required');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = resGuests;
+            } else {
+                clearFieldError(resGuests, document.getElementById('res-guests-error'));
+            }
+
+            // Validate Date
+            if (!resDate.value) {
+                showFieldError(resDate, document.getElementById('res-date-error'), 'Date is required');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = resDate;
+            } else {
+                clearFieldError(resDate, document.getElementById('res-date-error'));
+            }
+
+            // Validate Time
+            if (!resTime.value) {
+                showFieldError(resTime, document.getElementById('res-time-error'), 'Time is required');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = resTime;
+            } else {
+                clearFieldError(resTime, document.getElementById('res-time-error'));
+            }
+
+            if (!isValid) {
+                firstInvalidInput?.focus();
+                return;
+            }
+
+            // All valid - show simulated loading and confirmation
             const submitBtn = document.getElementById('res-submit-btn');
             if (submitBtn) {
                 const originalHtml = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fa-solid fa-circle-check text-base"></i><span>Reservation Confirmed!</span>';
-                submitBtn.classList.remove('bg-brand-red', 'hover:bg-brand-redHover');
-                submitBtn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
-                
-                if (resSuccess) {
-                    resSuccess.classList.remove('hidden');
-                }
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-base"></i><span>Booking Table...</span>';
 
                 setTimeout(() => {
-                    resForm.reset();
-                    submitBtn.innerHTML = originalHtml;
-                    submitBtn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
-                    submitBtn.classList.add('bg-brand-red', 'hover:bg-brand-redHover');
+                    submitBtn.innerHTML = '<i class="fa-solid fa-circle-check text-base"></i><span>Reservation Confirmed!</span>';
+                    submitBtn.classList.remove('bg-brand-red', 'hover:bg-brand-redHover');
+                    submitBtn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+                    
                     if (resSuccess) {
-                        setTimeout(() => resSuccess.classList.add('hidden'), 5000);
+                        resSuccess.classList.remove('hidden');
                     }
-                }, 3000);
+
+                    setTimeout(() => {
+                        resForm.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalHtml;
+                        submitBtn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
+                        submitBtn.classList.add('bg-brand-red', 'hover:bg-brand-redHover');
+                        if (resSuccess) {
+                            setTimeout(() => resSuccess.classList.add('hidden'), 4000);
+                        }
+                    }, 3000);
+                }, 500);
             }
         });
 
-        // Section 10: Contact Us Form Submission Feedback
+        // ==========================================
+        // SECTION 10: CONTACT US FORM VALIDATION
+        // ==========================================
         const contactForm = document.getElementById('contact-form');
         const contactSuccess = document.getElementById('contact-success');
+        const contactName = document.getElementById('contact-name');
+        const contactEmail = document.getElementById('contact-email');
+        const contactPhone = document.getElementById('contact-phone');
+        const contactSubject = document.getElementById('contact-subject');
+        const contactMessage = document.getElementById('contact-message');
+
+        // Real-time clearance of errors on input
+        contactName?.addEventListener('input', () => clearFieldError(contactName, document.getElementById('contact-name-error')));
+        contactEmail?.addEventListener('input', () => clearFieldError(contactEmail, document.getElementById('contact-email-error')));
+        contactPhone?.addEventListener('input', () => clearFieldError(contactPhone, document.getElementById('contact-phone-error')));
+        contactSubject?.addEventListener('change', () => clearFieldError(contactSubject, document.getElementById('contact-subject-error')));
+        contactMessage?.addEventListener('input', () => clearFieldError(contactMessage, document.getElementById('contact-message-error')));
 
         contactForm?.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            let isValid = true;
+            let firstInvalidInput = null;
+
+            // Validate Name
+            if (!contactName.value.trim()) {
+                showFieldError(contactName, document.getElementById('contact-name-error'), 'Name is required');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = contactName;
+            } else {
+                clearFieldError(contactName, document.getElementById('contact-name-error'));
+            }
+
+            // Validate Email
+            if (!contactEmail.value.trim()) {
+                showFieldError(contactEmail, document.getElementById('contact-email-error'), 'Email is required');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = contactEmail;
+            } else if (!isValidEmail(contactEmail.value)) {
+                showFieldError(contactEmail, document.getElementById('contact-email-error'), 'Please enter a valid email address');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = contactEmail;
+            } else {
+                clearFieldError(contactEmail, document.getElementById('contact-email-error'));
+            }
+
+            // Validate Phone Number
+            if (!contactPhone.value.trim()) {
+                showFieldError(contactPhone, document.getElementById('contact-phone-error'), 'Phone number is required');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = contactPhone;
+            } else if (!isValidPhone(contactPhone.value)) {
+                showFieldError(contactPhone, document.getElementById('contact-phone-error'), 'Please enter a valid phone number');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = contactPhone;
+            } else {
+                clearFieldError(contactPhone, document.getElementById('contact-phone-error'));
+            }
+
+            // Validate Subject
+            if (!contactSubject.value) {
+                showFieldError(contactSubject, document.getElementById('contact-subject-error'), 'Subject is required');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = contactSubject;
+            } else {
+                clearFieldError(contactSubject, document.getElementById('contact-subject-error'));
+            }
+
+            // Validate Message
+            if (!contactMessage.value.trim()) {
+                showFieldError(contactMessage, document.getElementById('contact-message-error'), 'Message is required');
+                isValid = false;
+                if (!firstInvalidInput) firstInvalidInput = contactMessage;
+            } else {
+                clearFieldError(contactMessage, document.getElementById('contact-message-error'));
+            }
+
+            if (!isValid) {
+                firstInvalidInput?.focus();
+                return;
+            }
+
+            // All valid - show simulated loading and success
             const submitBtn = document.getElementById('contact-submit-btn');
             if (submitBtn) {
                 const originalHtml = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fa-solid fa-circle-check text-sm"></i><span>Message Sent!</span>';
-                submitBtn.classList.remove('bg-brand-red', 'hover:bg-brand-redHover');
-                submitBtn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
-                
-                if (contactSuccess) {
-                    contactSuccess.classList.remove('hidden');
-                }
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-sm"></i><span>Sending Message...</span>';
 
                 setTimeout(() => {
-                    contactForm.reset();
-                    submitBtn.innerHTML = originalHtml;
-                    submitBtn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
-                    submitBtn.classList.add('bg-brand-red', 'hover:bg-brand-redHover');
+                    submitBtn.innerHTML = '<i class="fa-solid fa-circle-check text-sm"></i><span>Message Sent Successfully!</span>';
+                    submitBtn.classList.remove('bg-brand-red', 'hover:bg-brand-redHover');
+                    submitBtn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+                    
                     if (contactSuccess) {
-                        setTimeout(() => contactSuccess.classList.add('hidden'), 5000);
+                        contactSuccess.classList.remove('hidden');
                     }
-                }, 3000);
+
+                    setTimeout(() => {
+                        contactForm.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalHtml;
+                        submitBtn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
+                        submitBtn.classList.add('bg-brand-red', 'hover:bg-brand-redHover');
+                        if (contactSuccess) {
+                            setTimeout(() => contactSuccess.classList.add('hidden'), 4000);
+                        }
+                    }, 3000);
+                }, 500);
             }
+        });
+
+        // ==========================================
+        // SECTION 08: REVIEWS SLIDESHOW CONTROLLER (4 Reviews, 3 visible by default)
+        // ==========================================
+        const reviewsTrack = document.getElementById('reviews-slider-track');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        const reviewsContainer = document.getElementById('reviews-slider-container');
+        let currentReviewIndex = 0;
+        let reviewAutoInterval = null;
+
+        function goToReview(index) {
+            currentReviewIndex = (index + 4) % 4;
+            if (!reviewsTrack) return;
+            const cards = reviewsTrack.querySelectorAll('.review-slide-card');
+            if (!cards.length) return;
+
+            const cardWidth = cards[0].offsetWidth;
+            reviewsTrack.style.transform = `translateX(-${currentReviewIndex * cardWidth}px)`;
+
+            // Update 4 indicator buttons
+            testimonialDots.forEach((btn, i) => {
+                if (i === currentReviewIndex) {
+                    btn.classList.add('active', 'w-8', 'bg-brand-red');
+                    btn.classList.remove('w-2.5', 'bg-gray-300');
+                } else {
+                    btn.classList.remove('active', 'w-8', 'bg-brand-red');
+                    btn.classList.add('w-2.5', 'bg-gray-300');
+                }
+            });
+        }
+
+        // Attach click listeners to 4 buttons
+        testimonialDots.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                goToReview(i);
+                resetReviewAutoplay();
+            });
+        });
+
+        // Autoplay every 5s with pause on hover
+        function startReviewAutoplay() {
+            if (reviewAutoInterval) clearInterval(reviewAutoInterval);
+            reviewAutoInterval = setInterval(() => {
+                goToReview(currentReviewIndex + 1);
+            }, 5000);
+        }
+
+        function resetReviewAutoplay() {
+            clearInterval(reviewAutoInterval);
+            startReviewAutoplay();
+        }
+
+        startReviewAutoplay();
+
+        reviewsContainer?.addEventListener('mouseenter', () => clearInterval(reviewAutoInterval));
+        reviewsContainer?.addEventListener('mouseleave', startReviewAutoplay);
+
+        // Responsive re-alignment on screen resize
+        window.addEventListener('resize', () => {
+            goToReview(currentReviewIndex);
         });
 
         // Smooth scroll with exact header offset for all internal anchor links (#categories, #about, etc.)
@@ -2587,6 +3197,414 @@
                 const homeLink = document.querySelector('.nav-link[href="#"]');
                 if (homeLink) homeLink.classList.add('active', 'text-gray-900');
             }
+        });
+
+        // ==========================================
+        // SEARCH MODAL CONTROLLER ("What are you craving today?")
+        // ==========================================
+        const searchOpenBtn = document.getElementById('search-open-btn');
+        const searchModal = document.getElementById('search-modal');
+        const closeSearchBtn = document.getElementById('close-search-modal-btn');
+        const searchModalInput = document.getElementById('search-modal-input');
+        const searchSubmitBtn = document.getElementById('search-modal-submit-btn');
+        const searchModalForm = document.getElementById('search-modal-form');
+        const searchResultsContainer = document.getElementById('search-modal-results');
+        const searchEmptyEl = document.getElementById('search-modal-empty');
+        const searchCatPills = document.querySelectorAll('.search-cat-pill');
+        const trendingTags = document.querySelectorAll('.trending-tag-btn');
+
+        // Search Items Data Source
+        const searchItems = [
+            {
+                name: 'Classic Smash Burger',
+                category: 'burgers',
+                price: 'Rs. 1,490',
+                oldPrice: 'Rs. 1,890',
+                image: 'img/sec4img1.jpg',
+                fallbackImg: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80',
+                desc: 'Double smashed beef patty, cheddar, caramelized onions, pickles & secret sauce.',
+                badge: 'Best Seller',
+                badgeColor: 'bg-brand-red',
+                keywords: ['smash', 'burger', 'beef', 'classic', 'cheese']
+            },
+            {
+                name: 'Margherita Royale',
+                category: 'pizza',
+                price: 'Rs. 2,190',
+                oldPrice: 'Rs. 2,690',
+                image: 'img/sec4img2.jpg',
+                fallbackImg: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80',
+                desc: 'San Marzano tomatoes, buffalo mozzarella, fresh basil & truffle oil on sourdough.',
+                badge: 'New',
+                badgeColor: 'bg-emerald-600',
+                keywords: ['truffle', 'pizza', 'royale', 'cheese', 'margherita']
+            },
+            {
+                name: 'Nashville Hot Chicken',
+                category: 'chicken',
+                price: 'Rs. 1,690',
+                oldPrice: 'Rs. 1,990',
+                image: 'img/sec4img3.jpg',
+                fallbackImg: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=80',
+                desc: 'Crispy fried chicken in fiery Nashville spice blend with honey drizzle & slaw.',
+                badge: 'Best Seller',
+                badgeColor: 'bg-brand-red',
+                keywords: ['nashville', 'chicken', 'hot', 'fried', 'spicy', 'crispy']
+            },
+            {
+                name: 'Loaded Fajita Wrap',
+                category: 'wraps',
+                price: 'Rs. 1,290',
+                oldPrice: 'Rs. 1,590',
+                image: 'img/sec4img4.jpg',
+                fallbackImg: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80',
+                desc: 'Grilled seasoned chicken, bell peppers, sour cream & guacamole in warm tortilla.',
+                badge: 'Popular',
+                badgeColor: 'bg-amber-500 text-gray-950',
+                keywords: ['wrap', 'fajita', 'chicken', 'tortilla']
+            },
+            {
+                name: 'Nutella Lava Cake',
+                category: 'desserts',
+                price: 'Rs. 950',
+                oldPrice: 'Rs. 1,250',
+                image: 'img/sec4img5.jpg',
+                fallbackImg: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80',
+                desc: 'Molten chocolate cake with rich Nutella center, vanilla bean gelato & caramel drizzle.',
+                badge: 'Sweet Deal',
+                badgeColor: 'bg-brand-red',
+                keywords: ['lava', 'cake', 'nutella', 'chocolate', 'dessert', 'sweet']
+            },
+            {
+                name: 'Truffle Mushroom Pasta',
+                category: 'pasta',
+                price: 'Rs. 1,890',
+                oldPrice: 'Rs. 2,390',
+                image: 'img/sec4img6.jpg',
+                fallbackImg: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80',
+                desc: 'Al dente tagliatelle with wild forest mushrooms, black truffle cream & aged parmesan.',
+                badge: 'Chef Choice',
+                badgeColor: 'bg-emerald-600',
+                keywords: ['truffle', 'pasta', 'mushroom', 'spaghetti', 'tagliatelle']
+            },
+            {
+                name: 'Signature Loaded Fries',
+                category: 'burgers',
+                price: 'Rs. 890',
+                oldPrice: 'Rs. 1,150',
+                image: 'img/section05.jpg',
+                fallbackImg: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80',
+                desc: 'Golden crispy skin-on fries topped with hot cheddar cheese sauce, jalapeños & crispy bacon bits.',
+                badge: 'Trending',
+                badgeColor: 'bg-amber-500 text-gray-950',
+                keywords: ['loaded', 'fries', 'cheese', 'chips', 'potato', 'side']
+            },
+            {
+                name: 'Tropical Mango Shake',
+                category: 'desserts',
+                price: 'Rs. 750',
+                oldPrice: 'Rs. 950',
+                image: 'img/sec1img4.jpg',
+                fallbackImg: 'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=800&q=80',
+                desc: 'Fresh Alphonso mango blended with rich creamy milk, topped with whipped cream & mint.',
+                badge: 'Cold & Sweet',
+                badgeColor: 'bg-amber-500 text-gray-950',
+                keywords: ['mango', 'shake', 'drink', 'beverage', 'smoothie']
+            }
+        ];
+
+        let selectedSearchCategory = 'all';
+
+        function renderSearchResults() {
+            if (!searchResultsContainer) return;
+            const query = searchModalInput ? searchModalInput.value.trim().toLowerCase() : '';
+            const searchWords = query.split(/\s+/).filter(Boolean);
+
+            const filtered = searchItems.filter(item => {
+                const matchesCat = (selectedSearchCategory === 'all') || (item.category === selectedSearchCategory);
+                if (!matchesCat) return false;
+                if (searchWords.length === 0) return true;
+
+                const combinedText = [
+                    item.name,
+                    item.category,
+                    item.desc,
+                    ...(item.keywords || [])
+                ].join(' ').toLowerCase();
+
+                return searchWords.every(word => combinedText.includes(word));
+            });
+
+            if (filtered.length === 0) {
+                searchResultsContainer.innerHTML = '';
+                if (searchEmptyEl) {
+                    searchEmptyEl.classList.remove('hidden');
+                    const emptyText = searchEmptyEl.querySelector('span');
+                    if (emptyText) {
+                        emptyText.textContent = query 
+                            ? `No delicious items found matching "${query}". Try searching "Burger", "Pizza", or "Chicken"!`
+                            : 'No items found in this category.';
+                    }
+                }
+                return;
+            }
+
+            if (searchEmptyEl) searchEmptyEl.classList.add('hidden');
+
+            searchResultsContainer.innerHTML = filtered.map(item => `
+                <div class="bg-[#18191d] rounded-2xl overflow-hidden border border-white/10 hover:border-brand-red/50 transition-all duration-300 transform hover:-translate-y-1 shadow-lg flex flex-col justify-between group">
+                    <div class="relative h-44 overflow-hidden bg-black/40">
+                        ${item.badge ? `
+                            <span class="absolute top-2.5 left-2.5 z-10 ${item.badgeColor} text-white font-bold text-[10px] px-2.5 py-0.5 rounded-md shadow-sm">
+                                ${item.badge}
+                            </span>
+                        ` : ''}
+                        <img src="${item.image}" alt="${item.name}" 
+                             onerror="this.src='${item.fallbackImg}'"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-brand-orange text-[10px] font-bold uppercase tracking-wider block mb-1">${item.category}</span>
+                            <h4 class="font-serif font-bold text-white text-base leading-snug group-hover:text-brand-red transition-colors mb-1.5">
+                                ${item.name}
+                            </h4>
+                            <p class="text-gray-400 text-xs line-clamp-2 leading-relaxed mb-3">
+                                ${item.desc}
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-white/5 flex items-center justify-between">
+                            <div>
+                                <span class="text-brand-red font-bold font-serif text-lg">${item.price}</span>
+                                ${item.oldPrice ? `<span class="text-gray-500 text-[11px] line-through ml-1">${item.oldPrice}</span>` : ''}
+                            </div>
+                            <button type="button" 
+                                    onclick="closeSearchModalAndScroll()" 
+                                    class="inline-flex items-center gap-1.5 bg-brand-red hover:bg-brand-redHover text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-sm hover:scale-105 active:scale-95 transition-all cursor-pointer">
+                                <span>Order</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        window.closeSearchModalAndScroll = function() {
+            closeSearchModal();
+            const targetSection = document.getElementById('menu') || document.getElementById('categories');
+            if (targetSection) {
+                const header = document.querySelector('header');
+                const headerHeight = header ? header.offsetHeight : 130;
+                const offsetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - (headerHeight + 10);
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        };
+
+        function openSearchModal() {
+            if (!searchModal) return;
+            searchModal.classList.remove('hidden');
+            searchModal.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+            renderSearchResults();
+            setTimeout(() => {
+                if (searchModalInput) searchModalInput.focus();
+            }, 60);
+        }
+
+        function closeSearchModal() {
+            if (!searchModal) return;
+            searchModal.classList.remove('flex');
+            searchModal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        searchOpenBtn?.addEventListener('click', openSearchModal);
+        closeSearchBtn?.addEventListener('click', closeSearchModal);
+
+        // Click outside content to close
+        searchModal?.addEventListener('click', (e) => {
+            if (e.target === searchModal) {
+                closeSearchModal();
+            }
+        });
+
+        // ESC key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && searchModal && !searchModal.classList.contains('hidden')) {
+                closeSearchModal();
+            }
+        });
+
+        // Search input typing
+        searchModalInput?.addEventListener('input', () => {
+            renderSearchResults();
+        });
+
+        // Search form submit
+        searchModalForm?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            renderSearchResults();
+        });
+        searchSubmitBtn?.addEventListener('click', () => {
+            renderSearchResults();
+        });
+
+        // Category pills click
+        searchCatPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                searchCatPills.forEach(p => {
+                    p.classList.remove('active', 'bg-brand-red', 'text-white', 'border-brand-red');
+                    p.classList.add('bg-[#1d1f24]', 'text-gray-300', 'border-white/10');
+                });
+                pill.classList.remove('bg-[#1d1f24]', 'text-gray-300', 'border-white/10');
+                pill.classList.add('active', 'bg-brand-red', 'text-white', 'border-brand-red');
+                selectedSearchCategory = pill.getAttribute('data-category') || 'all';
+                renderSearchResults();
+            });
+        });
+
+        // Trending tags click
+        trendingTags.forEach(tagBtn => {
+            tagBtn.addEventListener('click', () => {
+                const keyword = tagBtn.getAttribute('data-search') || tagBtn.textContent.trim();
+                if (searchModalInput) {
+                    searchModalInput.value = keyword;
+                }
+                // Reset category pill to 'All Items'
+                searchCatPills.forEach(p => {
+                    if (p.getAttribute('data-category') === 'all') {
+                        p.classList.remove('bg-[#1d1f24]', 'text-gray-300', 'border-white/10');
+                        p.classList.add('active', 'bg-brand-red', 'text-white', 'border-brand-red');
+                    } else {
+                        p.classList.remove('active', 'bg-brand-red', 'text-white', 'border-brand-red');
+                        p.classList.add('bg-[#1d1f24]', 'text-gray-300', 'border-white/10');
+                    }
+                });
+                selectedSearchCategory = 'all';
+                renderSearchResults();
+                if (searchModalInput) searchModalInput.focus();
+            });
+        });
+        // ==========================================
+        // SCROLL TO TOP BUTTON
+        // ==========================================
+        const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollToTopBtn.classList.remove('hidden', 'translate-y-20', 'opacity-0');
+                scrollToTopBtn.classList.add('translate-y-0', 'opacity-100');
+            } else {
+                scrollToTopBtn.classList.remove('translate-y-0', 'opacity-100');
+                scrollToTopBtn.classList.add('translate-y-20', 'opacity-0');
+                setTimeout(() => {
+                    if (window.scrollY <= 500) scrollToTopBtn.classList.add('hidden');
+                }, 300);
+            }
+        });
+
+        scrollToTopBtn?.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ==========================================
+        // PRODUCT DETAILS MODAL
+        // ==========================================
+        const productModal = document.getElementById('product-modal');
+        const pmContent = document.getElementById('product-modal-content');
+        const closeProductModalBtn = document.getElementById('close-product-modal-btn');
+        const pmQtyMinus = document.getElementById('pm-qty-minus');
+        const pmQtyPlus = document.getElementById('pm-qty-plus');
+        const pmQty = document.getElementById('pm-qty');
+        
+        let currentQty = 1;
+
+        function openProductModal(cardData) {
+            if (!productModal) return;
+            
+            // Populate data
+            document.getElementById('pm-image').src = cardData.image;
+            document.getElementById('pm-category').textContent = cardData.category;
+            document.getElementById('pm-title').textContent = cardData.title;
+            document.getElementById('pm-desc').textContent = cardData.desc;
+            document.getElementById('pm-price').textContent = cardData.price;
+            document.getElementById('pm-old-price').textContent = cardData.oldPrice;
+            
+            currentQty = 1;
+            pmQty.textContent = currentQty;
+
+            // Show Modal
+            productModal.classList.remove('hidden');
+            productModal.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+            
+            // Animate in
+            setTimeout(() => {
+                productModal.classList.remove('opacity-0');
+                pmContent.classList.remove('scale-95');
+                pmContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeProductModal() {
+            if (!productModal) return;
+            productModal.classList.add('opacity-0');
+            pmContent.classList.remove('scale-100');
+            pmContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                productModal.classList.remove('flex');
+                productModal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }, 300);
+        }
+
+        closeProductModalBtn?.addEventListener('click', closeProductModal);
+        productModal?.addEventListener('click', (e) => {
+            if (e.target === productModal) closeProductModal();
+        });
+
+        pmQtyMinus?.addEventListener('click', () => {
+            if (currentQty > 1) {
+                currentQty--;
+                pmQty.textContent = currentQty;
+            }
+        });
+        
+        pmQtyPlus?.addEventListener('click', () => {
+            currentQty++;
+            pmQty.textContent = currentQty;
+        });
+
+        // Attach click events to all "add-to-cart" buttons in the menu
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const card = btn.closest('.menu-card');
+                if (!card) return;
+
+                const image = card.querySelector('img').src;
+                const category = card.querySelector('.text-brand-orange')?.textContent || '';
+                const title = card.querySelector('h3')?.textContent || '';
+                const desc = card.querySelector('p')?.textContent || '';
+                
+                const priceWrapper = card.querySelector('.flex.items-baseline');
+                let price = '';
+                let oldPrice = '';
+                if (priceWrapper) {
+                    price = priceWrapper.querySelector('.text-brand-red')?.textContent || '';
+                    oldPrice = priceWrapper.querySelector('.line-through')?.textContent || '';
+                }
+
+                openProductModal({
+                    image,
+                    category: category.trim(),
+                    title: title.trim(),
+                    desc: desc.trim(),
+                    price: price.trim(),
+                    oldPrice: oldPrice.trim()
+                });
+            });
         });
     </script>
 
